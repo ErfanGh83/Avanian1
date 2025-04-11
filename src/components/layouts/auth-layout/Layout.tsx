@@ -1,3 +1,4 @@
+import Header from '@/components/headers/auth-layout-header/Header'
 import React, { ReactElement } from 'react'
 
 type Props = {
@@ -8,7 +9,7 @@ const Layout = ({ children }: Props) => {
   return (
     <div>
         <header>
-
+            <Header />
         </header>
 
         <main>
