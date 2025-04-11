@@ -18,7 +18,7 @@ const LoginForm = () => {
         </div>
 
         <Link href={`/sign-up`}>
-            <p className='text-blue-500'>حساب کاربری ندارید ؟</p>
+            <p className='text-blue-500'>حساب کاربری ندارید ؟ از اینجا می توانید ایجاد کنید.</p>
         </Link>
       </div>
 
