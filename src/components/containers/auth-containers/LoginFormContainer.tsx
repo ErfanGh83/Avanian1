@@ -15,7 +15,7 @@ const LoginFormContainer = () => {
       <div
         className='w-1/2 bg-gray-400'
       >
-
+          
       </div>
 
     </div>
