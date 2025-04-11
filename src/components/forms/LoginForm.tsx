@@ -4,7 +4,7 @@ import { BiPhone } from 'react-icons/bi'
 
 const LoginForm = () => {
   return (
-    <form className='w-full max-w-md flex flex-col gap-6 p-6 bg-white dark:bg-gray-800 rounded-xl shadow-lg dark:shadow-gray-900/50 rtl'>
+    <form className='w-full max-w-md flex flex-col gap-6 p-6 bg-white dark:bg-gray-800 rounded-xl dark:shadow-gray-900/50 rtl'>
       <h2 className='text-2xl font-bold text-center text-gray-800 dark:text-gray-100 mb-2'>ورود</h2>
 
       <div className='flex flex-col gap-4'>
