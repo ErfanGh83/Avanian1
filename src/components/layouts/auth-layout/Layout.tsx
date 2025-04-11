@@ -7,12 +7,16 @@ type Props = {
 
 const Layout = ({ children }: Props) => {
   return (
-    <div>
+    <div
+        className='size-full overflow-hidden'
+    >
         <header>
             <Header />
         </header>
 
-        <main>
+        <main
+            className='size-full'
+        >
             {children}
         </main>
 

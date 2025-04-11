@@ -1,13 +1,14 @@
 import React from 'react'
 import Layout from '@/components/layouts/auth-layout/Layout'
+import LoginFormContainer from '@/components/containers/auth-containers/LoginFormContainer'
 
 const page = () => {
   return (
     <Layout>
         <div
-            className=''
+            className='size-full flex justify-center'
         >
-            <p>login</p>
+            <LoginFormContainer />
         </div>
     </Layout>
   )
