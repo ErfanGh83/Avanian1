@@ -4,11 +4,11 @@ export const data = [
         title: "random image"
     },
     {
-        src: "https://img.freepik.com/premium-vector/cute-animals-cartoon-doodle-baby-animal-banner-background-wallpaper_493693-121.jpg",
+        src: "https://wallpapers.com/images/high/cute-cartoon-animal-lfxlel63muswruw2.webp",
         title: "random image"
     },
     {
-        src: "https://img.freepik.com/premium-vector/cute-adorable-animals-greeting-cartoon-doodle-background_40564-498.jpg",
+        src: "https://wallpapers.com/images/high/cute-kawaii-70jgett4ckct6rq6.webp",
         title: "random image"
     },
 ]

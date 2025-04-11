@@ -3,7 +3,8 @@ module.exports = {
   images: {
     domains: [
       'img.freepik.com',
-      'static.vecteezy.com'
+      'static.vecteezy.com',
+      'wallpapers.com'
     ],
   },
 }

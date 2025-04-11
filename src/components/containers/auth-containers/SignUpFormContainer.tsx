@@ -1,4 +1,5 @@
 import SignUpForm from '@/components/forms/SignUpForm'
+import AuthSliders from '@/components/sliders/AuthSliders'
 import React from 'react'
 
 const LoginFormContainer = () => {
@@ -15,7 +16,7 @@ const LoginFormContainer = () => {
       <div
         className='w-1/2 bg-gray-400'
       >
-
+        <AuthSliders />
       </div>
 
     </div>
