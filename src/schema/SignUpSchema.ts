@@ -15,3 +15,5 @@ export const formSchema = z.object({
 });
 
 export type FormData = z.infer<typeof formSchema>;
+
+export type FormField = keyof FormData;

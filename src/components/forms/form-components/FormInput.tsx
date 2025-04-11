@@ -1,3 +1,4 @@
+// components/FormInput.tsx
 import { BiUser, BiPhone } from 'react-icons/bi';
 import { GrGroup } from 'react-icons/gr';
 
@@ -5,6 +6,7 @@ type FormInputProps = {
   name: string;
   value: string;
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  onBlur?: (e: React.FocusEvent<HTMLInputElement>) => void;
   placeholder: string;
   type?: string;
   icon?: React.ReactNode;
@@ -16,6 +18,7 @@ export const FormInput = ({
   name,
   value,
   onChange,
+  onBlur,
   placeholder,
   type = 'text',
   icon,
@@ -36,6 +39,7 @@ export const FormInput = ({
           name={name}
           value={value}
           onChange={onChange}
+          onBlur={onBlur}
           className="w-full h-12 px-3 text-lg bg-transparent border-none focus:outline-none placeholder-gray-400 dark:placeholder-gray-500 text-right text-gray-800 dark:text-gray-100"
           placeholder={placeholder}
           type={type}
