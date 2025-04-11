@@ -9,7 +9,7 @@ const LoginForm = () => {
       
       <div className='space-y-4'>
         <div className='flex flex-row items-center border-2 border-gray-200 rounded-lg overflow-hidden transition-all focus-within:border-blue-500 focus-within:ring-2 focus-within:ring-blue-200'>
-          <BiUser size={20} className='mr-3 text-gray-500' />
+          <BiUser size={20} className='mx-3 text-gray-500' />
           <input
             className='w-full h-12 px-3 text-lg border-none focus:outline-none placeholder-gray-400 text-right'
             placeholder='نام'
@@ -18,7 +18,7 @@ const LoginForm = () => {
         </div>
 
         <div className='flex flex-row items-center border-2 border-gray-200 rounded-lg overflow-hidden transition-all focus-within:border-blue-500 focus-within:ring-2 focus-within:ring-blue-200'>
-          <GrGroup size={20} className='mr-3 text-gray-500' />
+          <GrGroup size={20} className='mx-3 text-gray-500' />
           <input
             className='w-full h-12 px-3 text-lg border-none focus:outline-none placeholder-gray-400 text-right'
             placeholder='نام خانوادگی'
@@ -27,7 +27,7 @@ const LoginForm = () => {
         </div>
 
         <div className='flex flex-row items-center border-2 border-gray-200 rounded-lg overflow-hidden transition-all focus-within:border-blue-500 focus-within:ring-2 focus-within:ring-blue-200'>
-          <BiPhone size={20} className='mr-3 text-gray-500' />
+          <BiPhone size={20} className='mx-3 text-gray-500' />
           <input
             className='w-full h-12 px-3 text-lg border-none focus:outline-none placeholder-gray-400 text-right'
             placeholder='شماره تلفن'
@@ -38,7 +38,7 @@ const LoginForm = () => {
 
       <button
         type='submit'
-        className='w-full h-12 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-colors duration-200 mt-4'
+        className='w-full h-12 bg-blue-600 dark:bg-red-600 hover:bg-blue-700 dark:hover:bg-red-700 text-white font-medium rounded-lg transition-colors duration-200 mt-4'
       >
         ادامه
       </button>
