@@ -11,14 +11,14 @@ const DarkButton = () => {
     const { setTheme, resolvedTheme } = useTheme()
 
     //currently in dark mode so no dark button needed
-    if (resolvedTheme === 'dark') {
+    if (resolvedTheme === 'light') {
         return (<div></div>)
     }
 
     return (
         <motion.button
             className='size-8 flex items-center justify-center rounded-full bg-black shadow-xl hover:rotate-12 transition-all'
-            onClick={() => setTheme('dark')}
+            onClick={() => setTheme('light')}
             initial={{opacity: 0, x: 45}}
             animate={{opacity: 1, x: 0}}
             transition={{ 
