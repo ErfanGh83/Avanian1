@@ -3,9 +3,8 @@ import "./globals.css";
 
 export const metadata = {
   title: "Avanian",
-  description: "Best app for awesome users",
+  description: "Best app for awesome parents",
   keywords: ["Next.js", "Vazirmatn", "Tailwind"],
-  authors: [{ name: "Your Name", url: "https://your-site.com" }],
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
