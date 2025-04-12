@@ -1,17 +1,17 @@
 import { ThemeProviders } from "@/providers/ThemeProvider";
 import "./globals.css";
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export const metadata = {
+  title: "Avanian",
+  description: "Best app for awesome parents",
+  keywords: ["Next.js", "Vazirmatn", "Tailwind"],
+};
+
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html dir="rtl" lang="fa" suppressHydrationWarning>
-      <body className="w-screen h-screen">
-        <ThemeProviders>
-          {children}
-        </ThemeProviders>
+      <body className="w-screen h-screen font-vazirmatn">
+        <ThemeProviders>{children}</ThemeProviders>
       </body>
     </html>
   );

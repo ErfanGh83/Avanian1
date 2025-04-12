@@ -1,4 +1,3 @@
-// components/FormInput.tsx
 import { BiUser, BiPhone } from 'react-icons/bi';
 import { GrGroup } from 'react-icons/gr';
 
@@ -40,7 +39,7 @@ export const FormInput = ({
           value={value}
           onChange={onChange}
           onBlur={onBlur}
-          className="w-full h-12 px-3 text-lg bg-transparent border-none focus:outline-none placeholder-gray-400 dark:placeholder-gray-500 text-right text-gray-800 dark:text-gray-100"
+          className="w-full h-12 pl-3 text-lg bg-transparent border-none focus:outline-none placeholder-gray-400 dark:placeholder-gray-500 text-right text-gray-800 dark:text-gray-100"
           placeholder={placeholder}
           type={type}
           required={required}
