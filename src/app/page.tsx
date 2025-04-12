@@ -1,10 +1,9 @@
 export default function Home() {
   return (
     <div
-      className=""
+      className="w-full h-fit flex items-center justify-center"
     >
       
-      <h1>home page</h1>
     </div>
   );
 }
