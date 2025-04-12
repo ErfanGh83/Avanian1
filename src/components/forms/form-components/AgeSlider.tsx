@@ -17,14 +17,14 @@ const AgeSlider = ({ value, onChange }: props) => {
             <input
                 type="range"
                 min="1"
-                max="120"
+                max="20"
                 value={value}
                 onChange={onChange}
                 className="w-full h-2 bg-gray-200 dark:bg-gray-600 rounded-lg appearance-none cursor-pointer accent-blue-500 dark:accent-blue-400"
             />
             <div className="flex justify-between text-xs text-gray-500 dark:text-gray-400 mt-1">
                 <span>1</span>
-                <span>120</span>
+                <span>20</span>
             </div>
         </div>
     )

@@ -1,4 +1,3 @@
-// components/SignUpForm.tsx
 "use client";
 
 import Link from 'next/link';
@@ -14,7 +13,6 @@ export const SignUpForm = () => {
   const [touched, setTouched] = useState<Record<string, boolean>>({});
   const [formData, setFormData] = useState<FormData>({
     firstName: '',
-    lastName: '',
     phoneNumber: '',
     age: 1
   });
@@ -90,16 +88,6 @@ export const SignUpForm = () => {
           onBlur={handleBlur}
           placeholder="نام"
           error={errors.firstName}
-          required
-        />
-
-        <FormInput
-          name="lastName"
-          value={formData.lastName}
-          onChange={handleChange}
-          onBlur={handleBlur}
-          placeholder="نام خانوادگی"
-          error={errors.lastName}
           required
         />
 
