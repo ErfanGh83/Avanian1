@@ -9,6 +9,10 @@ module.exports = {
       fontFamily: {
         vazirmatn: ["Vazirmatn"],
       },
+      colors: {
+        lightGreen: "#a2c837",
+        turquoise: "#42b9a2",
+      },
     },
   },
   plugins: [],
