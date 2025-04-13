@@ -4,13 +4,24 @@ import React, { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { useTheme } from "next-themes";
 
+const stars: { top: string; left: string }[] = [
+  { top: "18px", left: "150px" },
+  { top: "40px", left: "250px" },
+  { top: "60px", left: "350px" },
+  { top: "25px", left: "480px" },
+  { top: "90px", left: "800px" },
+  { top: "120px", left: "950px" },
+  { top: "35px", left: "1150px" },
+  { top: "100px", left: "1100px" },
+  { top: "50px", left: "1300px" },
+];
+
 export default function NavSVG() {
   const [isDark, setIsDark] = useState(false);
   const { resolvedTheme } = useTheme();
 
   useEffect(() => {
-    if (resolvedTheme == "light") setIsDark(false);
-    else setIsDark(true);
+    setIsDark(resolvedTheme === "dark");
   }, [resolvedTheme]);
 
   return (
@@ -23,7 +34,7 @@ export default function NavSVG() {
               initial={{ y: -70, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               exit={{ y: -70, opacity: 0 }}
-              transition={{ duration: 0.5 }}
+              transition={{ duration: 0.7 }}
               src="/vectors/cloud.svg"
               alt="cloud"
               className="absolute top-8 right-64 -z-5 w-52"
@@ -38,6 +49,30 @@ export default function NavSVG() {
               alt="cloud"
               className="absolute top-4 left-52 -z-5 w-20"
             />
+          </>
+        )}
+      </AnimatePresence>
+
+      <AnimatePresence>
+        {isDark && (
+          <>
+            {stars.map((star, i) => (
+              <motion.div
+                key={`star-${i}`}
+                initial={{ scale: 0, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                exit={{ scale: 0, opacity: 0 }}
+                transition={{ duration: 0.4, delay: i * 0.05 }}
+                className="absolute bg-white rounded-full"
+                style={{
+                  width: "4px",
+                  height: "4px",
+                  top: star.top,
+                  left: star.left,
+                  zIndex: -5,
+                }}
+              />
+            ))}
           </>
         )}
       </AnimatePresence>
