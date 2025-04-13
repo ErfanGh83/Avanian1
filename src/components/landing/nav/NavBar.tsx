@@ -36,7 +36,7 @@ export default function NavBar() {
                     type: "spring",
                     duration: 0.3,
                   }}
-                  className="relative flex items-center gap-2 cursor-pointer px-1 pb-1 text-white dark:text-neutral-700"
+                  className="relative flex items-center gap-2 cursor-pointer px-1 pb-1 text-white dark:text-gray-200"
                 >
                   {item.icon}
                   <span>{item.text}</span>
