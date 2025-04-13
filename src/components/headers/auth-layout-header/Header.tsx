@@ -1,4 +1,3 @@
-import ThemeSwitchButton from '@/components/buttons/ThemeSwitcher/ThemeSwitchButton'
 import React from 'react'
 
 
@@ -11,10 +10,8 @@ const Header = () => {
             {/* <p>left side of the header</p> */}
         </div>
 
-        <div
-            className=''
-        >
-            <ThemeSwitchButton />
+        <div>
+            {/* <p>right side of the header</p> */}
         </div>
     </div>
   )
