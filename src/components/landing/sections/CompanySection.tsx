@@ -10,37 +10,51 @@ export default function CompanySection() {
   return (
     <>
       <div className="bg-landing_bg1 dark:bg-dark1 w-full h-[40vh] absolute top-10 -z-20" />
-      <motion.div
+
+      <motion.section
         ref={ref}
-        className=" relative bg-landing_bg1 dark:bg-dark1 w-full flex items-center justify-around flex-col-reverse gap-3 md:flex-row mt-44 mb-0 pt-30 pb-16"
-        animate={{
-          opacity: isInView ? 1 : 0,
-          x: isInView ? 0 : 50,
-        }}
-        transition={{ duration: .5 }}
+        className="relative bg-landing_bg1 dark:bg-dark1 flex flex-col-reverse md:flex-row items-center justify-around gap-6 mt-44 mb-0 pb-10 px-6 md:px-16"
       >
-        <div className="flex flex-col items-start">
-          <h1 className="text-5xl pb-2">سرزمین آوانیان</h1>
-          <h3 className="max-w-[40vw]">
+        <div className="absolute bottom-[-10] z-[-3] bg-landing_bg1 dark:bg-dark1 w-full h-32 " />
+        <motion.div
+          variants={{
+            hidden: { opacity: 0, x: 50 },
+            visible: { opacity: 1, x: 0 },
+          }}
+          initial="hidden"
+          animate={isInView ? "visible" : "hidden"}
+          transition={{ duration: 1.2, ease: "easeOut" }}
+          className="flex flex-col items-start text-right"
+        >
+          <h1 className="text-4xl md:text-5xl font-bold pb-4">
+            سرزمین آوانیان
+          </h1>
+          <p className="max-w-xl text-base md:text-lg leading-relaxed">
             شرکت آوانیان با تکیه بر دانش فنی و تجربه‌ی تخصصی، در زمینه‌های
             طراحی، توسعه و پیاده‌سازی نرم‌افزارهای سازمانی و هوشمند فعالیت
             می‌کند و همواره کیفیت و نوآوری را سرلوحه‌ی خدمات خود قرار داده است.
-          </h3>
-        </div>
+          </p>
+        </motion.div>
+
         <motion.img
-          src={"/vectors/logo.svg"}
+          src="/vectors/logo.svg"
           alt="سرزمین آوانیان"
           width={250}
           height={250}
-          animate={{
-            opacity: isInView ? 1 : 0,
-            x: isInView ? 0 : -50,
+          loading="lazy"
+          variants={{
+            hidden: { opacity: 0, x: -50 },
+            visible: { opacity: 1, x: 0 },
           }}
-          transition={{ duration: .5 }}
+          initial="hidden"
+          animate={isInView ? "visible" : "hidden"}
+          transition={{ duration: 1.2, ease: "easeOut" }}
+          className="w-[200px] md:w-[250px] h-auto"
         />
-      </motion.div>
+      </motion.section>
+
       <svg
-        className="w-full"
+        className="w-full h-32"
         viewBox="0 0 1440 60"
         preserveAspectRatio="none"
         xmlns="http://www.w3.org/2000/svg"

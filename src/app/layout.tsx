@@ -10,7 +10,7 @@ export const metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html dir="rtl" lang="fa" suppressHydrationWarning>
-      <body className="w-screen h-screen font-vazirmatn">
+      <body className="w-screen h-screen font-vazirmatn overflow-x-hidden overflow-y-auto">
         <ThemeProviders>{children}</ThemeProviders>
       </body>
     </html>
