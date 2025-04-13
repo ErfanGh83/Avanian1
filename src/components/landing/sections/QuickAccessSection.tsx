@@ -6,8 +6,8 @@ import { motion } from "framer-motion";
 export default function QuickAccessSection() {
   return (
     <>
-      <div className="relative bg-landing_bg2 dark:bg-turquoise items-center flex flex-col md:flex-row gap-6 justify-around py-8">
-        <div className="absolute bg-landing_bg2 dark:bg-turquoise w-full h-64 top-[-17vh] z-[-10]" />
+      <div className="relative mb-[10vh] md:mb-[10vh] bg-landing_bg2 dark:bg-turquoise items-center flex flex-col md:flex-row gap-6 justify-around py-8">
+        <div className="absolute bg-landing_bg2 dark:bg-turquoise w-full h-64 top-[-30vh] z-[-10]" />
         <motion.button
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -65,7 +65,7 @@ export default function QuickAccessSection() {
         >
           فروشگاه
         </motion.button>
-        <div className="w-full h-20 absolute bottom-[10] z-[-4]">
+        <div className="w-full h-20 absolute bottom-[-5vh] z-[-4]">
           <svg
             className=" fill-landing_bg2 dark:fill-turquoise"
             xmlns="http://www.w3.org/2000/svg"

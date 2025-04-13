@@ -9,7 +9,7 @@ export default function CompanySection() {
 
   return (
     <>
-      <div className="bg-landing_bg1 dark:bg-dark1 w-full h-[40vh] absolute top-10 -z-20" />
+      <div className="bg-landing_bg1 dark:bg-dark1 w-full h-[60vh] absolute top-10 -z-20" />
 
       <motion.section
         ref={ref}
