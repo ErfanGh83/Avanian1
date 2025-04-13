@@ -1,14 +1,14 @@
 export const data = [
     {
-        src: "https://static.vecteezy.com/system/resources/previews/003/506/690/original/cute-animal-greeting-card-doodle-background-wallpaper-cartoon-illustration-vector.jpg",
-        title: "random image"
+        src: "/images/slide-image1.jpg",
+        title: "img3"
     },
     {
-        src: "https://wallpapers.com/images/high/cute-cartoon-animal-lfxlel63muswruw2.webp",
-        title: "random image"
+        src: "/images/slide-image2.jpg",
+        title: "img2"
     },
     {
-        src: "https://wallpapers.com/images/high/cute-kawaii-70jgett4ckct6rq6.webp",
-        title: "random image"
+        src: "/images/slide-image3.jpg",
+        title: "img3"
     },
 ]
