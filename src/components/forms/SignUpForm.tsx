@@ -126,7 +126,7 @@ export const SignUpForm = () => {
           {showPhoneInput && (
             <>
               <motion.div
-                key="phone-input"
+                key="firstName"
                 initial={{ x: 0, opacity: 1 }}
                 exit={{ x: -100, opacity: 0 }}
                 transition={{ duration: 0.3 }}
