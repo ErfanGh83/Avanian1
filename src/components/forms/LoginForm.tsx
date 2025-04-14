@@ -65,10 +65,8 @@ const LoginForm = () => {
             {showPhoneInput && (
               <motion.div
                 key="phone-input"
-                initial={{ x: -100, opacity: 0 }}
-                animate={{ x: 0, opacity: 1 }}
                 exit={{ x: -100, opacity: 0 }}
-                transition={{ duration: 0.2 }}
+                transition={{ duration: 0.3 }}
                 className='w-full flex flex-row items-center border-2 border-gray-200 dark:border-gray-600 rounded-lg overflow-hidden transition-all focus-within:border-blue-500 dark:focus-within:border-blue-400 focus-within:ring-2 focus-within:ring-blue-200 dark:focus-within:ring-blue-900'
               >
                 <BiPhone size={20} className='mx-3 text-gray-500 dark:text-gray-300' />
@@ -80,9 +78,7 @@ const LoginForm = () => {
                 />
               </motion.div>
             )}
-          </AnimatePresence>
 
-          <AnimatePresence mode='wait'>
             {showVerificationCode && (
               <motion.div
                 key="verification-input"
