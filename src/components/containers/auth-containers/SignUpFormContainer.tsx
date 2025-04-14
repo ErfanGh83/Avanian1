@@ -1,4 +1,4 @@
-import ThemeSwitchButton from '@/components/Buttons/ThemeSwitcher/ThemeSwitchButton'
+// import ThemeSwitchButton from '@/components/Buttons/ThemeSwitcher/ThemeSwitchButton'
 import { SignUpForm } from '@/components/forms/SignUpForm'
 import AuthSliders from '@/components/sliders/AuthSliders'
 import React from 'react'
@@ -20,11 +20,11 @@ const SignUpFormContainer = () => {
             <p className='size-fit text-blue-500 dark:text-blue-400 transition-all hover:text-blue-600 dark:hover:text-blue-300'>ورود به عنوان میهمان</p>
           </Link>
         </div>
-        <div
+        {/* <div
           className='absolute z-10 top-[1%] left-[2%]'
         >
           <ThemeSwitchButton />
-        </div>
+        </div> */}
         <LogoContainer />
         <SignUpForm />
       </div>
