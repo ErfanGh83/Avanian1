@@ -7,7 +7,6 @@ import { FormData } from '@/schema/SignUpSchema';
 import { validateFormData } from './form-components/ValidateFormData';
 import { validateField } from './form-components/ValidateField';
 import { FormInput } from './form-components/FormInput';
-import { BiPhone } from 'react-icons/bi';
 import { motion, AnimatePresence } from 'framer-motion';
 import VerificationCodeInput from './form-components/VerificationCodeInput';
 
