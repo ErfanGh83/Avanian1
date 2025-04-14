@@ -7,6 +7,9 @@ import { FormData } from '@/schema/SignUpSchema';
 import { validateFormData } from './form-components/ValidateFormData';
 import { validateField } from './form-components/ValidateField';
 import { FormInput } from './form-components/FormInput';
+import { BiPhone } from 'react-icons/bi';
+import { motion, AnimatePresence } from 'framer-motion';
+import VerificationCodeInput from './form-components/VerificationCodeInput';
 
 export const SignUpForm = () => {
   const [errors, setErrors] = useState<Record<string, string>>({});
@@ -16,14 +19,17 @@ export const SignUpForm = () => {
     phoneNumber: '',
     age: 1
   });
+  const [showVerificationCode, setShowVerificationCode] = useState(false);
+  const [showPhoneInput, setShowPhoneInput] = useState(true);
+  const [cooldown, setCooldown] = useState(0);
 
   useEffect(() => {
     const newErrors: Record<string, string> = {};
-    
+
     Object.keys(touched).forEach((field) => {
       if (touched[field]) {
         const error = validateField(
-          field as keyof FormData, 
+          field as keyof FormData,
           formData[field as keyof FormData]
         );
         if (error) {
@@ -31,7 +37,7 @@ export const SignUpForm = () => {
         }
       }
     });
-    
+
     setErrors(newErrors);
   }, [formData, touched]);
 
@@ -41,7 +47,7 @@ export const SignUpForm = () => {
       ...prev,
       [name]: name === 'age' ? Number(value) : value
     }));
-    
+
     setTouched(prev => ({ ...prev, [name]: true }));
   };
 
@@ -55,22 +61,58 @@ export const SignUpForm = () => {
     setTouched(prev => ({ ...prev, [name]: true }));
   };
 
+  const startCooldown = () => {
+    setCooldown(120);
+  };
+
+  const handleResendCode = () => {
+    console.log('Resending verification code...');
+    startCooldown();
+  };
+
+  const handleBackToPhone = () => {
+    setTimeout(() => {
+      setShowPhoneInput(true);
+    }, 300);
+    setTimeout(() => {
+      setShowVerificationCode(false);
+    }, 300);
+  };
+
+  useEffect(() => {
+    let timer: NodeJS.Timeout;
+    if (cooldown > 0) {
+      timer = setTimeout(() => setCooldown(cooldown - 1), 1000);
+    }
+    return () => clearTimeout(timer);
+  }, [cooldown]);
+
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
-    
+
     const allTouched = Object.keys(formData).reduce((acc, key) => {
       acc[key] = true;
       return acc;
     }, {} as Record<string, boolean>);
-    
+
     setTouched(allTouched);
-    
+
     const validationErrors = validateFormData(formData);
     setErrors(validationErrors);
-    
+
     if (Object.keys(validationErrors).length === 0) {
-      console.log('Form submitted:', formData);
-      // form submission logic
+      if (!showVerificationCode) {
+        // First step: validate and show verification code
+        setShowPhoneInput(false);
+        setTimeout(() => {
+          setShowVerificationCode(true);
+          startCooldown();
+        }, 300);
+      } else {
+        // Second step: submit form with verification code
+        console.log('Form submitted:', formData);
+        // form submission logic
+      }
     }
   };
 
@@ -80,33 +122,70 @@ export const SignUpForm = () => {
         ثبت نام
       </h2>
 
-      <div className="flex flex-col gap-2">
-        <FormInput
-          name="firstName"
-          value={formData.firstName}
-          onChange={handleChange}
-          onBlur={handleBlur}
-          placeholder="نام"
-          error={errors.firstName}
-          required
-        />
+      <div className="flex flex-col gap-4">
+        <AnimatePresence mode='wait'>
+          {showPhoneInput && (
+            <>
+              <motion.div
+                key="phone-input"
+                initial={{ x: 0, opacity: 1 }}
+                exit={{ x: -100, opacity: 0 }}
+                transition={{ duration: 0.3 }}
+              >
 
-        <FormInput
-          name="phoneNumber"
-          value={formData.phoneNumber}
-          onChange={handleChange}
-          onBlur={handleBlur}
-          placeholder="شماره تلفن"
-          type="tel"
-          error={errors.phoneNumber}
-          required
-        />
+                <FormInput
+                  name="firstName"
+                  value={formData.firstName}
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  placeholder="نام"
+                  error={errors.firstName}
+                  required
+                />
+              </motion.div>
 
-        <AgeSelector 
-          age={formData.age} 
-          onChange={handleAgeChange} 
-          error={errors.age} 
-        />
+              <motion.div
+                key="phone-input"
+                initial={{ x: 0, opacity: 1 }}
+                exit={{ x: -100, opacity: 0 }}
+                transition={{ duration: 0.3 }}
+              >
+                <FormInput
+                  name="phoneNumber"
+                  value={formData.phoneNumber}
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  placeholder="شماره تلفن"
+                  type="tel"
+                  error={errors.phoneNumber}
+                  required
+                />
+              </motion.div>
+
+              <AgeSelector
+                age={formData.age}
+                onChange={handleAgeChange}
+                error={errors.age}
+              />
+            </>
+          )}
+          {showVerificationCode && (
+            <motion.div
+              key="verification-input"
+              initial={{ x: 100, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              exit={{ x: 100, opacity: 0 }}
+              transition={{ duration: 0.3 }}
+            >
+              <VerificationCodeInput
+                onBack={handleBackToPhone}
+                onResendCode={handleResendCode}
+                cooldown={cooldown}
+                resetCooldown={() => setCooldown(0)}
+              />
+            </motion.div>
+          )}
+        </AnimatePresence>
 
         <Link href="/login">
           <p className="text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-300 transition-colors">
@@ -119,7 +198,7 @@ export const SignUpForm = () => {
         type="submit"
         className="w-full h-12 bg-blue-600 dark:bg-blue-700 hover:bg-blue-700 dark:hover:bg-blue-600 text-white font-medium rounded-lg transition-colors duration-200 mt-4 shadow-md hover:shadow-lg dark:shadow-blue-900/50"
       >
-        ادامه
+        {showVerificationCode ? 'تکمیل ثبت نام' : 'ادامه'}
       </button>
     </form>
   );
