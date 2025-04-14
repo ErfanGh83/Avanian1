@@ -12,6 +12,13 @@ export default function ChatBotSection() {
       ref={ref}
       className="relative bg-landing_bg3 dark:bg-dark4 items-center w-full pt-20 px-4"
     >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 1440 320"
+        className="absolute right-0 left-0 w-full bottom-[-10vh] md:bottom-[-30vh] z-[-6] fill-landing_bg3 dark:fill-dark4"
+      >
+        <path d="M0,288L48,272C96,256,192,224,288,197.3C384,171,480,149,576,170.7C672,192,768,256,864,277.3C960,299,1056,277,1152,277.3C1248,277,1344,299,1392,309.3L1440,320L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path>
+      </svg>
       <div className="max-w-[1100px] gap-6 justify-around mx-auto flex flex-col-reverse items-center md:flex-row ">
         <motion.div
           variants={{
@@ -42,7 +49,6 @@ export default function ChatBotSection() {
           </motion.button>
         </motion.div>
 
-        {/* <div className="rotate-3"> */}
         <motion.img
           src="/vectors/book.svg"
           alt="چت بات"
@@ -58,7 +64,6 @@ export default function ChatBotSection() {
           transition={{ duration: 1, ease: "easeOut" }}
           className="w-[200px] md:w-[250px] h-auto"
         />
-        {/* </div> */}
       </div>
     </motion.section>
   );
