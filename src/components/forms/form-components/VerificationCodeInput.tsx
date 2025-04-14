@@ -1,0 +1,54 @@
+import { formatTime } from "@/utils/formatTime"
+import { BiTimer } from "react-icons/bi"
+
+const VerificationCodeInput = ({
+    onResendCode,
+    cooldown,
+    onBack,
+}: {
+    onBack: () => void,
+    onResendCode: () => void,
+    cooldown: number,
+    resetCooldown: () => void
+}) => {
+    return (
+        <div className="flex flex-col gap-4 mt-4">
+            <div className='flex flex-row items-center border-2 border-gray-200 dark:border-gray-600 rounded-lg overflow-hidden transition-all focus-within:border-blue-500 dark:focus-within:border-blue-400 focus-within:ring-2 focus-within:ring-blue-200 dark:focus-within:ring-blue-900'>
+                <input
+                    className='w-full h-12 px-4 text-lg bg-transparent border-none focus:outline-none placeholder-gray-400 dark:placeholder-gray-500 text-center text-gray-800 dark:text-gray-100'
+                    placeholder='کد تأیید'
+                    type='text'
+                    inputMode='numeric'
+                    pattern='[0-9]*'
+                />
+            </div>
+
+            <div className="flex flex-row items-center justify-between">
+                <button
+                    type="button"
+                    onClick={cooldown <= 0 ? onResendCode : undefined}
+                    disabled={cooldown > 0}
+                    className={`text-sm flex items-center gap-1 ${cooldown > 0 ? 'text-gray-500 dark:text-gray-400' : 'text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-300'} transition-colors`}
+                >
+                    {cooldown > 0 ? (
+                        <>
+                            <BiTimer size={16} />
+                            <span>ارسال مجدد کد ({formatTime(cooldown)})</span>
+                        </>
+                    ) : (
+                        <span>ارسال مجدد کد</span>
+                    )}
+                </button>
+
+                <button
+                    onClick={onBack}
+                    className="text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-300 transition-colors"
+                >
+                    بازگشت
+                </button>
+            </div>
+        </div>
+    )
+}
+
+export default VerificationCodeInput
