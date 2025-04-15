@@ -6,7 +6,7 @@ export default function ChatPage() {
   const fetchData: string[] = [];
 
   return (
-    <div className="flex flex-col overflow-hidden h-screen bg-[#B3D433] p-4">
+    <div className="size-1/2 px-6 flex flex-col overflow-hidden h-screen mx-auto">
       <MessageContainer data={fetchData} />
       <MessageInput />
     </div>
