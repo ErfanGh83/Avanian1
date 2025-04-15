@@ -1,6 +1,7 @@
 import Image from "next/image";
 import React from "react";
 import MessageItem from "./MessageItem";
+import ChatBox from "../containers/chat-containers/ChatBox";
 
 type Prop = {
   data: string[];
@@ -9,10 +10,8 @@ type Prop = {
 export default function MessageContainer({ data }: Prop) {
   return (
     <>
-      {data.length > 0 ? (
-        <div className="flex-1 overflow-y-auto rounded-lg bg-lightBlue p-4 mb-4">
-          <div className="mb-2">👋 سلام! چطور می‌تونم کمکت کنم؟</div>
-        </div>
+      {1 > 0 ? (
+        <ChatBox />
       ) : (
         <div className="m-auto items-center gap-4 px-8 md:px-16 py-32 lg:px-32 bg-white/50 rounded-2xl flex flex-row">
           <MessageItem sender="bot">سلام من زانیار هستم! چطور می‌تونم کمکت کنم؟</MessageItem>

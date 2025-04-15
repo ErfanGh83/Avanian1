@@ -26,10 +26,10 @@ export default function MessageInput() {
 
       <button
         type="submit"
-        className=" size-12 flex items-center justify-center p-3 rounded-full bg-[#5ec4ff] hover:bg-[#48b1ef] text-white shadow-lg transition-all"
+        className=" size-20 flex items-center justify-center p-3 rounded-full bg-[#5ec4ff] hover:bg-[#48b1ef] text-white shadow-lg transition-all"
         aria-label="ارسال پیام"
       >
-        <FaArrowUp />
+        <FaArrowUp size={24}/>
       </button>
     </form>
   );
