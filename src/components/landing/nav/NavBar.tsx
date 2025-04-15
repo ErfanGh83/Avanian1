@@ -1,6 +1,6 @@
 "use client";
 
-import ThemeSwitchButton from "@/components/buttons/ThemeSwitcher/ThemeSwitchButton";
+// import ThemeSwitchButton from "@/components/buttons/ThemeSwitcher/ThemeSwitchButton";
 import React, { ReactNode } from "react";
 import { FaHome, FaUser } from "react-icons/fa";
 import { FaMessage, FaShop } from "react-icons/fa6";
@@ -16,7 +16,7 @@ export default function NavBar() {
   return (
     <>
       <NavSVG />
-      <nav className="w-full flex flex-row h-20 justify-between items-center px-6">
+      <nav className="w-full flex flex-row h-20 justify-between items-center px-1 md:px-6 gap-2">
         <Image
           src="/images/logo.png"
           alt="Avanian"
@@ -25,7 +25,7 @@ export default function NavBar() {
           className="w-28"
         />
 
-        <div className="flex flex-row gap-1 md:gap-3 lg:gap-8 text-base items-center">
+        <div className="flex flex-row gap-3 md:gap-3 lg:gap-8 text-base items-center">
           {buttons.map((item) => {
             const isActive = pathname === item.link;
             return (
@@ -38,7 +38,7 @@ export default function NavBar() {
                   }}
                   className="relative flex items-center gap-2 cursor-pointer px-1 pb-1 text-white dark:text-gray-200"
                 >
-                  {item.icon}
+                  <span className="hidden md:block">{item.icon}</span>
                   <span>{item.text}</span>
 
                   <motion.div
@@ -54,7 +54,7 @@ export default function NavBar() {
           })}
         </div>
 
-        <ThemeSwitchButton />
+        <div className="w-16">{/* <ThemeSwitchButton /> */}</div>
       </nav>
     </>
   );
