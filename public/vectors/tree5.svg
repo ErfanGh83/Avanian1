@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="svg1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 65.38 109.47">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #5c2d91;
+      }
+
+      .cls-2 {
+        fill: #4a002b;
+      }
+
+      .cls-3 {
+        fill: #f7941d;
+      }
+
+      .cls-4 {
+        fill: #a73521;
+      }
+
+      .cls-5 {
+        fill: #00361a;
+        opacity: .3;
+      }
+
+      .cls-5, .cls-6 {
+        isolation: isolate;
+      }
+
+      .cls-7 {
+        fill: #45196f;
+      }
+
+      .cls-6 {
+        opacity: .5;
+      }
+
+      .cls-6, .cls-8 {
+        fill: #2c004b;
+      }
+
+      .cls-9 {
+        fill: none;
+        stroke: rgba(255, 255, 255, .7);
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 1.77px;
+      }
+    </style>
+  </defs>
+  <g id="use36">
+    <ellipse id="ellipse743" class="cls-5" cx="32.69" cy="95.72" rx="26.13" ry="13.75"/>
+    <path id="path744" class="cls-2" d="M28.6,80.42h8.19v14.22c0,2.17-8.19,2.4-8.19,0v-14.22Z"/>
+    <path id="path745" class="cls-7" d="M32.69,14.41L1.71,58.43c-7.77,9.42,12.38,22.18,30.98,22.18s38.7-12.76,30.98-22.18L32.69,14.41Z"/>
+    <path id="path746" class="cls-8" d="M32.69,14.41l13.65,64.13c13.23-4,23.16-12.99,17.33-20.1L32.69,14.41Z"/>
+    <path id="path747" class="cls-3" d="M32.69,6.59L8.26,39.69c-6.12,7.44,9.79,17.51,24.44,17.51s30.6-10.08,24.44-17.51L32.69,6.59Z"/>
+    <path id="path748" class="cls-4" d="M32.69,6.59l10.45,49.06c10.59-3.11,18.64-10.31,13.98-15.96L32.69,6.59Z"/>
+    <path id="path750" class="cls-1" d="M32.69,0L12.73,24.2c-4.99,6.07,7.96,14.31,19.96,14.31s24.95-8.24,19.96-14.31L32.69,0Z"/>
+    <path id="path751" class="cls-9" d="M30.67,10.36l-13.75,17"/>
+    <path id="path752" class="cls-9" d="M15.22,37.81l-4.24,5.84"/>
+    <path id="path753" class="cls-9" d="M10.04,55.04l-5.65,8"/>
+    <path id="path754" class="cls-6" d="M32.69,0l9.32,37.01c8.24-2.68,14.31-8.29,10.59-12.76L32.69,0Z"/>
+  </g>
+</svg>
