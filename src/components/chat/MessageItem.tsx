@@ -9,14 +9,16 @@ type Props = {
 export default function MessageItem({ sender, children }: Props) {
   return (
     <div
-      className={`w-full flex
+      className={`w-full flex 
         ${sender === "user" ? "flex-row items-end" : "flex-row-reverse items-start"}`}
     >
       <div
-        className={`w-fit max-w-1/2 flex gap-2 items-center overflow-hidden 
+        className={`w-full h-full max-w-2xl flex gap-2 overflow-hidden 
           ${sender === "user" ? "flex-row" : "flex-row-reverse"}`}
       >
-        <div>
+        <div
+          className=" h-full flex flex-col items-end justify-end"
+        >
           {
             sender === "bot" ?
               <OwlPfp />
@@ -29,7 +31,7 @@ export default function MessageItem({ sender, children }: Props) {
           }
         </div>
         <div
-          className={`bg-t/30 relative rounded-t-xl ${sender == "user" ? "bg-dark2 rounded-bl-xl" : "bg-avanianBlue rounded-br-xl"
+          className={`max-w-3/4 bg-t/30 relative rounded-t-xl ${sender == "user" ? "bg-dark2 rounded-bl-xl" : "bg-avanianBlue rounded-br-xl"
             }`}
         >
           <div
@@ -48,7 +50,7 @@ export default function MessageItem({ sender, children }: Props) {
             </svg>
           </div>
 
-          <h3 className="px-6 py-3 ">{children}</h3>
+          <h3 className="px-6 py-3">{children}</h3>
         </div>
       </div>
     </div>
