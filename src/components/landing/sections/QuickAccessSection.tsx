@@ -1,71 +1,23 @@
-"use client";
-
 import React from "react";
-import { motion } from "framer-motion";
+import QuickAccessButton from "./QuickAccessButton";
 
 export default function QuickAccessSection() {
   return (
     <>
       <div className="relative mb-[10vh] md:mb-[10vh] bg-landing_bg2 dark:bg-turquoise items-center flex flex-col md:flex-row gap-6 justify-around py-8">
-        <div className="absolute bg-landing_bg2 dark:bg-turquoise w-full h-64 top-[-30vh] z-[-10]" />
-        <motion.button
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{
-            type: "spring",
-            stiffness: 100,
-            damping: 10,
-            delay: 0.3,
-          }}
-          whileHover={{
-            y: -4,
-            scale: 1.05,
-            transition: { duration: 0.2 },
-          }}
-          whileTap={{ scale: 0.95 }}
-          className="bg-landing_bg1 dark:text-black text-white max-w-64 py-6 text-xl px-20 rounded-3xl shadow-lg hover:shadow-xl"
-        >
-          ثبت نام
-        </motion.button>
-        <motion.button
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{
-            type: "spring",
-            stiffness: 100,
-            damping: 10,
-            delay: 0.3,
-          }}
-          whileHover={{
-            y: -4,
-            scale: 1.05,
-            transition: { duration: 0.2 },
-          }}
-          whileTap={{ scale: 0.95 }}
-          className="bg-landing_bg3 dark:text-black text-white max-w-64 py-6 text-xl px-20 rounded-3xl shadow-lg hover:shadow-xl"
-        >
-          چت بات
-        </motion.button>
-        <motion.button
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{
-            type: "spring",
-            stiffness: 100,
-            damping: 10,
-            delay: 0.3,
-          }}
-          whileHover={{
-            y: -4,
-            scale: 1.05,
-            transition: { duration: 0.2 },
-          }}
-          whileTap={{ scale: 0.95 }}
-          className="bg-landing_bg4 dark:text-black text-white max-w-64 py-6 text-xl px-20 rounded-3xl shadow-lg hover:shadow-xl"
-        >
-          فروشگاه
-        </motion.button>
-        <div className="w-full h-20 absolute bottom-[-5vh] z-[-4]">
+        <div className="absolute bg-landing_bg2 dark:bg-turquoise w-full h-[40vh] top-[-30vh] z-[-3]" />
+
+        {buttonList.map((item) => (
+          <QuickAccessButton
+            key={item.text}
+            href={item.href}
+            bgColor={item.bgColor}
+          >
+            {item.text}
+          </QuickAccessButton>
+        ))}
+
+        <div className="w-full h-32 absolute bottom-[-15vh] md:bottom-[-5vh] z-[-2]">
           <svg
             className=" fill-landing_bg2 dark:fill-turquoise"
             xmlns="http://www.w3.org/2000/svg"
@@ -79,3 +31,13 @@ export default function QuickAccessSection() {
     </>
   );
 }
+
+const buttonList: {
+  text: string;
+  href: string;
+  bgColor: string;
+}[] = [
+  { text: "ثبت نام", bgColor: "bg-landing_bg1", href: "#login" },
+  { text: "چت بات", bgColor: "bg-landing_bg3", href: "#chat" },
+  { text: "فروشگاه", bgColor: "bg-landing_bg4", href: "#shop" },
+];
