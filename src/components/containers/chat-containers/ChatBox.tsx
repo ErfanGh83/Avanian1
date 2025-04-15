@@ -12,7 +12,7 @@ const ChatBox = () => {
             </MessageItem>
 
             <MessageItem sender={'user'}>
-                hello
+                helloasdfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
             </MessageItem>
 
         </div>
