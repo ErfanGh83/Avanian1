@@ -37,7 +37,7 @@ export default function NavSVG() {
               transition={{ duration: 0.7 }}
               src="/vectors/cloud.svg"
               alt="cloud"
-              className="absolute top-8 right-64 -z-5 w-52"
+              className="hidden md:block absolute top-8 right-64 -z-5 w-52"
             />
             <motion.img
               key="cloud2"
@@ -47,7 +47,7 @@ export default function NavSVG() {
               transition={{ duration: 0.5 }}
               src="/vectors/small-cloud.svg"
               alt="cloud"
-              className="absolute top-4 left-52 -z-5 w-20"
+              className="hidden md:block absolute top-4 left-52 -z-5 w-20"
             />
           </>
         )}
@@ -77,7 +77,7 @@ export default function NavSVG() {
         )}
       </AnimatePresence>
 
-      <div className="absolute top-0 left-0 w-screen -z-10">
+      <div className="absolute top-0 left-0 w-screen z-[-1]">
         <svg
           className="w-full h-60 fill-lightBlue dark:fill-darkBlue"
           xmlns="http://www.w3.org/2000/svg"
