@@ -1,18 +1,18 @@
 "use client";
 
-import React, { useRef } from "react";
-import { motion, useInView } from "framer-motion";
+import React from "react";
+import { motion } from "framer-motion";
 
 export default function CompanySection() {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { margin: "-100px", amount: 0.3 });
+  // const ref = useRef(null);
+  // const isInView = useInView(ref, { margin: "-100px", amount: 0.3 });
 
   return (
     <>
       <div className="bg-landing_bg1 dark:bg-dark1 w-full h-[40vh] absolute top-10 z-[-2]" />
 
       <motion.section
-        ref={ref}
+        // ref={ref}
         className="relative bg-landing_bg1 dark:bg-dark1 flex flex-col-reverse md:flex-row items-center justify-around gap-6 mt-44 mb-0 pb-10 px-6 md:px-16"
       >
         <div className="absolute bottom-[-10] z-[-2] bg-landing_bg1 dark:bg-dark1 w-full h-[20vh] " />
@@ -22,7 +22,8 @@ export default function CompanySection() {
             visible: { opacity: 1, x: 0 },
           }}
           initial="hidden"
-          animate={isInView ? "visible" : "hidden"}
+          whileInView="visible"
+          viewport={{ once: true }}
           transition={{ duration: 1.2, ease: "easeOut" }}
           className="flex flex-col items-start text-right"
         >
@@ -41,6 +42,7 @@ export default function CompanySection() {
           src="/vectors/logo.svg"
           alt="سرزمین آوانیان"
           width={250}
+          viewport={{ once: true }}
           height={250}
           loading="lazy"
           variants={{
@@ -48,7 +50,7 @@ export default function CompanySection() {
             visible: { opacity: 1, x: 0 },
           }}
           initial="hidden"
-          animate={isInView ? "visible" : "hidden"}
+          whileInView="visible"
           transition={{ duration: 1.2, ease: "easeOut" }}
           className="w-[200px] md:w-[250px] h-auto"
         />
