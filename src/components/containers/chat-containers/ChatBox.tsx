@@ -12,8 +12,7 @@ const ChatBox = () => {
             </MessageItem>
 
             <MessageItem sender={'user'}>
-                helooo alsd;ifkj a;lkdsjf 'pakjdsf 'paojsdf p;i;ajdfikjasdlkfja 'lka jdlskfjalksjdf'asdf assdsf asdfasdfadsfdaafsdafsfafaafdffdfds
-                helooo alsd;ifkj a;lkdsjf 'pakjdsf 'paojsdf p;i;ajdfikjasdlkfja 'lka jdlskfjalksjdf'asdf assdsf asdfasdfadsfdaafsdafsfafaafdffdfdshelooo alsd;ifkj a;lkdsjf 'pakjdsf 'paojsdf p;i;ajdfikjasdlkfja 'lka jdlskfjalksjdf'asdf assdsf asdfasdfadsfdaafsdafsfafaafdffdfdshelooo alsd;ifkj a;lkdsjf 'pakjdsf 'paojsdf p;i;ajdfikjasdlkfja 'lka jdlskfjalksjdf'asdf assdsf asdfasdfadsfdaafsdafsfafaafdffdfdshelooo alsd;ifkj a;lkdsjf 'pakjdsf 'paojsdf p;i;ajdfikjasdlkfja 'lka jdlskfjalksjdf'asdf assdsf asdfasdfadsfdaafsdafsfafaafdffdfds
+                hello
             </MessageItem>
 
         </div>
