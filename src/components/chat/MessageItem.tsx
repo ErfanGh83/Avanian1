@@ -8,29 +8,25 @@ type Props = {
 export default function MessageItem({ sender, children }: Props) {
   return (
     <div
-      className={`bg-t/30 relative rounded-md ${
-        sender == "user" ? "bg-dark2" : "bg-avanianBlue"
-      }`}
+      className={`w-full flex 
+        ${sender === "user" ? "flex-row items-end" : "flex-row-reverse items-start"}`}
     >
       <div
-        className={`absolute ${
-          sender == "bot" ? "left-[-5]" : "right-[-4]"
-        } bottom-0`}
+        className={`w-full h-full items-end max-w-2xl flex gap-2 overflow-hidden 
+          ${sender === "user" ? "flex-row" : "flex-row-reverse"}`}
       >
-        <svg
-          width="10"
-          height="10"
-          viewBox="0 0 10 10"
-          xmlns="http://www.w3.org/2000/svg"
-          className={`${
-            sender == "user" ? "fill-dark2 rotate-180" : "fill-avanianBlue"
+
+        <div
+          className={`max-w-[90%] h-fit min-h-[75%] bg-t/30 relative rounded-t-xl ${
+            sender == "user" ? "bg-dark2 rounded-bl-xl ml-10" : "bg-avanianBlue rounded-br-xl mr-10"
           }`}
         >
-          <polygon points="0,5 10,0 10,10" />
-        </svg>
-      </div>
 
-      <h3 className="p-5 ">{children}</h3>
+          <div className="w-full px-6 py-3 break-words overflow-wrap-anywhere">
+            <h3>{children}</h3>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
