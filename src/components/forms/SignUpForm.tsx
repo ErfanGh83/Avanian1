@@ -166,7 +166,7 @@ export const SignUpForm = () => {
           setAuthToken(authResponse.access_token);
 
           // Store session id
-          setSessionId(authResponse.session_id)
+          setSessionId(authResponse.chat_session_id)
 
           // Redirect to home page
           router.push('/');

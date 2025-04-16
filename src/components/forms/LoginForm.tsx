@@ -62,7 +62,9 @@ const LoginForm = () => {
         setAuthToken(authResponse.access_token)
 
         // Store session id
-        setSessionId(authResponse.session_id)
+        setSessionId(authResponse.chat_session_id)
+
+        console.log(authResponse)
 
         router.push('/')
       } catch (err) {
