@@ -27,7 +27,7 @@ export const createUser = async (userData: UserCreateRequest): Promise<UserRespo
     }
     // For non-Axios errors, create a generic error response
     throw {
-      detail: 'An unexpected error occurred while creating the user'
+      detail: 'خطایی غیر منتظره رخ داده است.'
     } as ErrorResponse;
   }
 };
