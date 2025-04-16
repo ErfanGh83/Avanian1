@@ -17,7 +17,7 @@ const LoginFormContainer = () => {
           className='absolute z-10 top-[1%] right-[3%]'
         >
           <Link href={`/`}>
-            <p className='size-fit text-blue-500 dark:text-blue-400 transition-all hover:text-blue-600 dark:hover:text-blue-300'>ورود به عنوان میهمان</p>
+            <p className='size-fit text-blue-500 dark:text-blue-400 transition-all hover:text-blue-600 dark:hover:text-blue-300'>بازگشت به خانه</p>
           </Link>
         </div>
         {/* <div
