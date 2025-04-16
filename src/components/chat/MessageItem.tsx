@@ -22,7 +22,7 @@ export default function MessageItem({ sender, children }: Props) {
           }`}
         >
 
-          <div className="w-full p-4 break-words overflow-wrap-anywhere">
+          <div className="w-full px-6 py-3 break-words overflow-wrap-anywhere">
             <h3>{children}</h3>
           </div>
         </div>
