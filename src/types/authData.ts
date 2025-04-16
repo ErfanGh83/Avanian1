@@ -1,5 +1,5 @@
 export interface ISignUpData {
-    firstName: string;
-    phoneNumber: string;
+    name: string;
+    phone_umber: string;
     age: number;
 }

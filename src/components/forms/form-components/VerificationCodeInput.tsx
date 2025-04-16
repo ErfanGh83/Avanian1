@@ -1,5 +1,5 @@
-import { formatTime } from "@/utils/formatTime";
 import { BiTimer } from "react-icons/bi";
+import { formatTime } from "@/utils/formatTime";
 
 interface VerificationCodeInputProps {
   onBack: () => void;
@@ -17,7 +17,7 @@ const VerificationCodeInput = ({
 }: VerificationCodeInputProps) => {
   const handleCodeChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
-    if (/^\d*$/.test(value)) { // Only allow numbers
+    if (/^\d*$/.test(value)) {
       onChange(value);
     }
   };
@@ -32,7 +32,7 @@ const VerificationCodeInput = ({
           inputMode='numeric'
           pattern='[0-9]*'
           onChange={handleCodeChange}
-          maxLength={6} // Assuming 6-digit OTP
+          maxLength={6}
         />
       </div>
 

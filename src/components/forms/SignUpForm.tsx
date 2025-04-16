@@ -29,6 +29,7 @@ export const SignUpForm = () => {
   const [cooldown, setCooldown] = useState(0);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState<string | null>(null);
+  const [userId, setUserId] = useState<number | null>(null); // Store user ID after creation
 
   useEffect(() => {
     const newErrors: Record<string, string> = {};
@@ -78,12 +79,14 @@ export const SignUpForm = () => {
 
   const handleResendCode = async () => {
     try {
+      if (!formData) return;
+
       await requestOTP(formData.phoneNumber);
       startCooldown();
       setSubmitError(null);
     } catch (error) {
-      setSubmitError('خطایی در فرستادن کد پیش آمد. لطفا چند لحظه بعد مجدد امتحان کنی.');
-      console.error(error)
+      setSubmitError('خطایی در فرستادن کد پیش آمد. لطفا چند لحظه بعد مجدد امتحان کنید.');
+      console.error(error);
     }
   };
 
@@ -121,21 +124,37 @@ export const SignUpForm = () => {
 
     if (Object.keys(validationErrors).length === 0) {
       if (!showVerificationCode) {
-        // First step: request OTP
+        // First step: create user
         try {
-          await requestOTP(formData.phoneNumber);
+          const userData = {
+            name: formData.firstName,
+            phone_number: formData.phoneNumber,
+            age: formData.age
+          };
+
+          // Send user data to backend
+          const response = await createUser(userData);
+          setUserId(response.id); // Store the user ID
+
+          // Request OTP after successful user creation
+          await requestOTP(userData.phone_number);
+
           setShowPhoneInput(false);
           setTimeout(() => {
             setShowVerificationCode(true);
             startCooldown();
           }, 300);
         } catch (error) {
-          setSubmitError('خطایی در فرستادن کد پیش آمد. لطفا چند لحظه بعد مجدد امتحان کنید.');
-          console.error(error)
+          setSubmitError('خطایی در ثبت اطلاعات پیش آمد. لطفا چند لحظه بعد مجدد امتحان کنید.');
+          console.error(error);
         }
       } else {
-        // Second step: verify OTP and create user
+        // Second step: verify OTP
         try {
+          if (!userId) {
+            throw new Error('User ID not found');
+          }
+
           // Verify OTP
           const authResponse = await verifyOTP({
             phone_number: formData.phoneNumber,
@@ -145,20 +164,11 @@ export const SignUpForm = () => {
           // Store token
           setAuthToken(authResponse.access_token);
 
-          // Create user
-          const userData = {
-            name: formData.firstName,
-            phone_number: formData.phoneNumber,
-            age: formData.age
-          };
-
-          await createUser(userData);
-
           // Redirect to home page
           router.push('/');
         } catch (error) {
           setSubmitError('کد وارد شده نادرست است.');
-          console.error(error)
+          console.error(error);
         }
       }
     }
