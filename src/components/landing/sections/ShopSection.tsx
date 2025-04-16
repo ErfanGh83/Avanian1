@@ -12,11 +12,11 @@ export default function ShopSection() {
     <motion.div
       // ref={ref}
       id="shop"
-      className="relative bg-landing_bg3 items-center w-full mt-[15vh] md:mt-[30vh] px-4 pb-36"
+      className="relative bg-landing_bg3 items-center w-full mt-[150px] md:mt-[250px] px-4 pb-36"
     >
-      <div className="absolute top-[-20vh] md:top-[-25vh] right-0 w-full bg-landing_bg3 h-[40vh] z-[-7]" />
+      <div className="absolute top-[-200px] md:top-[-300px] right-0 w-full bg-landing_bg3 h-[400px] z-[-7]" />
 
-      <div className="max-w-[1100px] gap-6 justify-around mx-auto flex flex-col items-center md:flex-row ">
+      <div className="max-w-[1100px] px-10 gap-8 justify-around mx-auto flex flex-col items-center md:flex-row ">
         <motion.img
           src="/vectors/shop.svg"
           alt="فروشگاه"
@@ -45,8 +45,10 @@ export default function ShopSection() {
           transition={{ duration: 1, ease: "easeOut" }}
           className="flex flex-col items-start text-right"
         >
-          <h3 className="text-4xl font-bold mb-2">رفتن به فروشگاه آوانیان</h3>
-          <p className="max-w-[80vh]">
+          <h3 className="text-4xl font-bold mb-2 text-outline-lg">
+            رفتن به فروشگاه آوانیان
+          </h3>
+          <p className="max-w-[400px] md:max-w-[500px] text-justify text-lg text-outline-md">
             «فروشگاه آوانیان»، به عنوان نخستین فروشگاه اینترنتی و Market Place
             تخصصی حوزه اوقات فراغت کودک و نوجوان فعالیت خود را از بهار ۱۴۰۱ به
             نام «شبکه اوقات فراغت» آغاز نموده است.

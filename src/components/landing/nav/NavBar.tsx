@@ -22,7 +22,7 @@ export default function NavBar() {
           alt="Avanian"
           width={200}
           height={200}
-          className="w-28"
+          className="w-28 z-10"
         />
 
         <div className="flex flex-row gap-3 md:gap-3 lg:gap-8 text-base items-center">
@@ -36,10 +36,10 @@ export default function NavBar() {
                     type: "spring",
                     duration: 0.3,
                   }}
-                  className="relative flex items-center gap-2 cursor-pointer px-1 pb-1 text-white dark:text-gray-200"
+                  className="relative flex items-center md:gap-2 cursor-pointer md:px-1 pb-1 text-white dark:text-gray-200"
                 >
                   <span className="hidden md:block">{item.icon}</span>
-                  <span>{item.text}</span>
+                  <span className="text-xs sm:text-sm md:text-lg">{item.text}</span>
 
                   <motion.div
                     layout
@@ -54,7 +54,7 @@ export default function NavBar() {
           })}
         </div>
 
-        <div className="w-16">{/* <ThemeSwitchButton /> */}</div>
+        <div className="w-4 sm:w-16">{/* <ThemeSwitchButton /> */}</div>
       </nav>
     </>
   );

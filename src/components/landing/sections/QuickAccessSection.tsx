@@ -5,7 +5,7 @@ export default function QuickAccessSection() {
   return (
     <>
       <div className="relative mb-[10vh] md:mb-[10vh] bg-landing_bg2 dark:bg-turquoise items-center flex flex-col md:flex-row gap-6 justify-around py-8">
-        <div className="absolute bg-landing_bg2 dark:bg-turquoise w-full h-[40vh] top-[-30vh] z-[-3]" />
+        <div className="absolute bg-landing_bg2 dark:bg-turquoise w-full h-[200px] top-[-150px] z-[-3]" />
 
         {buttonList.map((item) => (
           <QuickAccessButton
@@ -17,7 +17,7 @@ export default function QuickAccessSection() {
           </QuickAccessButton>
         ))}
 
-        <div className="w-full h-32 absolute bottom-[-15vh] md:bottom-[-5vh] z-[-2]">
+        <div className="w-full h-32 absolute bottom-[-100px] md:bottom-[-100px] z-[-2]">
           <svg
             className=" fill-landing_bg2 dark:fill-turquoise"
             xmlns="http://www.w3.org/2000/svg"

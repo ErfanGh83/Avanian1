@@ -15,10 +15,10 @@ export default function LoginSection() {
     >
       <div
         id="login"
-        className="max-w-[1100px] mx-auto flex flex-col md:flex-row justify-around items-center "
+        className="max-w-[1100px] gap-8 px-3 mx-auto flex flex-col md:flex-row justify-around items-center mt-[100px] md:mt-[150px]"
       >
-        <div className="absolute bg-landing_bg4 dark:bg-dark4 top-[-30vh] left-0 right-0 w-full h-[35vh] z-[-4]" />
-        <div className="absolute bg-landing_bg4 dark:bg-dark4 bottom-[-2vh] left-0 right-0 w-full h-[4vh] z-[-4]" />
+        <div className="absolute bg-landing_bg4 dark:bg-dark4 top-[-200px] left-0 right-0 w-full h-[300px] z-[-4]" />
+        <div className="absolute bg-landing_bg4 dark:bg-dark4 bottom-[-80px] left-0 right-0 w-full h-[150px] z-[-4]" />
 
         <motion.img
           src="/vectors/book.svg"
@@ -48,16 +48,19 @@ export default function LoginSection() {
           transition={{ duration: 1, ease: "easeOut" }}
           className="flex flex-col items-start text-right"
         >
-          <h3 className="text-4xl font-bold mb-2">
+          <h3 className="text-4xl font-bold mb-2 text-outline-lg">
             به خانواده آوانیان بپیوندید!
           </h3>
-          <p className="max-w-[80vh]">
+          <p className="max-w-[400px] md:max-w-[500px] text-justify text-lg text-outline-md">
             استفاده از خدمات و محصولات اوقات فراغت «سرزمین آوانیان» به صورت
             حضوری و غیرحضوری برای افرادی که به عضویت باشگاه آن درآمده باشند،
             می‌تواند منافع و مزایای خاصی ایجاد کند.
           </p>
 
-          <SectionButton href="/sign-up" >رفتن به ثبت نام</SectionButton>
+          <div className="flex flex-row gap-3 md:gap-6">
+            <SectionButton href="/sign-up">رفتن به ثبت نام</SectionButton>
+            <SectionButton href="/login">رفتن به ورود</SectionButton>
+          </div>
         </motion.div>
       </div>
     </motion.section>

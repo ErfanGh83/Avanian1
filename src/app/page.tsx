@@ -1,3 +1,4 @@
+import Footer from "@/components/landing/Footer";
 import NavBar from "@/components/landing/nav/NavBar";
 import ChatBotSection from "@/components/landing/sections/ChatBotSection";
 import CompanySection from "@/components/landing/sections/CompanySection";
@@ -7,13 +8,14 @@ import ShopSection from "@/components/landing/sections/ShopSection";
 
 export default function Home() {
   return (
-    <div className="text-white">
+    <div className="text-white w-full overflow-x-hidden">
       <NavBar />
       <CompanySection />
       <QuickAccessSection />
       <LoginSection />
       <ChatBotSection />
       <ShopSection />
+      <Footer />
     </div>
   );
 }

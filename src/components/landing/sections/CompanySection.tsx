@@ -9,13 +9,13 @@ export default function CompanySection() {
 
   return (
     <>
-      <div className="bg-landing_bg1 dark:bg-dark1 w-full h-[40vh] absolute top-10 z-[-2]" />
+      <div className="bg-landing_bg1 dark:bg-dark1 w-full h-[300px] absolute top-10 z-[-2]" />
 
       <motion.section
         // ref={ref}
-        className="relative bg-landing_bg1 dark:bg-dark1 flex flex-col-reverse md:flex-row items-center justify-around gap-6 mt-44 mb-0 pb-10 px-6 md:px-16"
+        className="relative bg-landing_bg1 dark:bg-dark1 flex flex-col-reverse md:flex-row items-center justify-around gap-8 mt-44 mb-0 pb-10 px-6 md:px-16"
       >
-        <div className="absolute bottom-[-10] z-[-2] bg-landing_bg1 dark:bg-dark1 w-full h-[20vh] " />
+        <div className="absolute bottom-[-10] z-[-2] bg-landing_bg1 dark:bg-dark1 w-full h-[100px] " />
         <motion.div
           variants={{
             hidden: { opacity: 0, x: 50 },
@@ -27,10 +27,10 @@ export default function CompanySection() {
           transition={{ duration: 1.2, ease: "easeOut" }}
           className="flex flex-col items-start text-right"
         >
-          <h1 className="text-4xl md:text-5xl font-bold pb-4">
+          <h1 className="text-4xl md:text-5xl font-bold pb-4 text-outline-lg">
             سرزمین آوانیان
           </h1>
-          <p className="max-w-xl text-base md:text-lg leading-relaxed">
+          <p className="text-lg text-justify max-w-[400px] md:max-w-[500px] text-outline-md">
             سرزمین نخستین زیست بوم تخصصی اوقات و فراغت کودکان و نوجوانان ایران
             زمین است. شخصیت های جهان داستان آوانیان روایت جدیدی از روش های
             سازماندهی و برنامه ریزی خانواده ایرانی در زمان فراغتشان را بیان می
