@@ -61,7 +61,7 @@ export const SignUpForm = () => {
   };
 
   const startCooldown = () => {
-    setCooldown(120);
+    setCooldown(180);
   };
 
   const handleResendCode = () => {

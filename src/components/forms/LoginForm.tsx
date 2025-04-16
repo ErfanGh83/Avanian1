@@ -35,7 +35,7 @@ const LoginForm = () => {
   }
 
   const startCooldown = () => {
-    setCooldown(120)
+    setCooldown(180)
   }
 
   const handleResendCode = () => {
