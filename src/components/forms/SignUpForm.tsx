@@ -116,7 +116,7 @@ export const SignUpForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="w-full max-w-md flex flex-col gap-6 p-6 bg-white dark:bg-gray-800 rounded-xl dark:shadow-gray-900/50 rtl">
+    <form onSubmit={handleSubmit} className="w-full  h-fit max-w-md flex flex-col gap-6 p-6 bg-white dark:bg-gray-800 rounded-xl dark:shadow-gray-900/50 rtl">
       <h2 className="text-2xl font-bold text-center text-gray-800 dark:text-gray-100 mb-2">
         ثبت نام
       </h2>

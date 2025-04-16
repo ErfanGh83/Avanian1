@@ -25,6 +25,9 @@ module.exports = {
         dark3: "#00A651",
         dark4: "#d48812",
       },
+      screens: {
+        'short': { 'raw': '(min-height: 700px)' },
+      },
     },
   },
   plugins: [],
