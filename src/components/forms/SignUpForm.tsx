@@ -12,6 +12,7 @@ import VerificationCodeInput from './form-components/VerificationCodeInput';
 import { requestOTP, verifyOTP } from '@/lib/api/auth';
 import { createUser } from '@/lib/api/users';
 import { setAuthToken } from '@/utils/storage';
+import { setSessionId } from '@/utils/storage';
 import { useRouter } from 'next/navigation';
 
 export const SignUpForm = () => {
@@ -163,6 +164,9 @@ export const SignUpForm = () => {
 
           // Store token
           setAuthToken(authResponse.access_token);
+
+          // Store session id
+          setSessionId(authResponse.session_id)
 
           // Redirect to home page
           router.push('/');

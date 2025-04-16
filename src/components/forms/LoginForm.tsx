@@ -6,7 +6,7 @@ import { BiPhone } from 'react-icons/bi'
 import VerificationCodeInput from './form-components/VerificationCodeInput'
 import { motion, AnimatePresence } from 'framer-motion'
 import { requestOTP, verifyOTP } from '@/lib/api/auth'
-import { setAuthToken } from '@/utils/storage'
+import { setAuthToken, setSessionId } from '@/utils/storage'
 import { useRouter } from 'next/navigation'
 
 const LoginForm = () => {
@@ -60,6 +60,9 @@ const LoginForm = () => {
 
         // Store the token
         setAuthToken(authResponse.access_token)
+
+        // Store session id
+        setSessionId(authResponse.session_id)
 
         router.push('/')
       } catch (err) {

@@ -11,6 +11,7 @@ export interface OTPVerifyRequest {
 
 export interface AuthResponse {
   access_token: string;
+  session_id: string;
   token_type: string;
 }
 
