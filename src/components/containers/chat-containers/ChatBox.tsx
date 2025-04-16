@@ -4,7 +4,7 @@ import React from 'react'
 const ChatBox = () => {
     return (
         <div
-            className='w-full h-full my-8 p-4 flex flex-col gap-4 rounded-3xl text-white bg-green-700 overflow-y-auto'
+            className='w-full h-full my-8 p-4 flex flex-col gap-4 rounded-3xl text-white bg-orange-500 overflow-y-auto'
         >
 
             <MessageItem sender={'bot'}>

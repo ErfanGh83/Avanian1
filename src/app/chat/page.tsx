@@ -8,13 +8,13 @@ export default function page() {
       <div className="size-full overflow-hidden flex flex-row-reverse justify-center items-center bg-[#B3D433]">
 
         <div
-          className="w-1/4 hidden"
+          className="w-2/5"
         >
-
+          
         </div>
 
         <div
-          className="w-full"
+          className="w-3/5"
         >
           <ChatPage />
         </div>

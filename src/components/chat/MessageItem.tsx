@@ -17,7 +17,7 @@ export default function MessageItem({ sender, children }: Props) {
       >
 
         <div
-          className={`max-w-[75%] h-fit min-h-[75%] bg-t/30 relative rounded-t-xl ${
+          className={`max-w-[100%] h-fit min-h-[75%] bg-t/30 relative rounded-t-xl ${
             sender == "user" ? "bg-dark2 rounded-bl-xl" : "bg-avanianBlue rounded-br-xl"
           }`}
         >
