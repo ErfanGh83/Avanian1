@@ -28,8 +28,10 @@ module.exports = {
       screens: {
         'short': { 'raw': '(min-height: 700px)' },
       },
+
     },
   },
   plugins: [],
   darkMode: "selector",
 };
+
