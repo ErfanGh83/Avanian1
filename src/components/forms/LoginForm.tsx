@@ -92,6 +92,7 @@ const LoginForm = () => {
                   onBack={handleBackToPhone}
                   onResendCode={handleResendCode}
                   cooldown={cooldown}
+                  resetCooldown={() => setCooldown(0)}
                 />
               </motion.div>
             )}
