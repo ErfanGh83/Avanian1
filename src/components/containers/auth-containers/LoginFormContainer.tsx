@@ -8,7 +8,7 @@ import Link from 'next/link'
 const LoginFormContainer = () => {
   return (
     <div
-      className="size-full xl:size-4/5 flex flex-row bg-white dark:bg-gray-800 text-black  dark:text-white border-2 border-gray-100 dark:border-gray-900 xl:rounded-3xl m-auto xl:shadow-2xl overflow-hidden"
+      className="size-full xl:size-11/12 xl:max-w-[1420px] xl:max-h-[900px] flex flex-row bg-white dark:bg-gray-800 text-black  dark:text-white border-2 border-gray-100 dark:border-gray-900 xl:rounded-3xl m-auto xl:shadow-2xl overflow-hidden"
     >
       <div
         className='w-full h-full flex flex-col items-center justify-center relative'
