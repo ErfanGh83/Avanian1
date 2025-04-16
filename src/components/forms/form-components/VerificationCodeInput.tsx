@@ -9,7 +9,6 @@ const VerificationCodeInput = ({
     onBack: () => void,
     onResendCode: () => void,
     cooldown: number,
-    resetCooldown: () => void
 }) => {
     return (
         <div className="flex flex-col gap-4 mt-4">
