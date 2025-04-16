@@ -51,7 +51,7 @@ export default function LoginSection() {
           <h3 className="text-4xl font-bold mb-2 text-outline-lg">
             به خانواده آوانیان بپیوندید!
           </h3>
-          <p className="max-w-[80vw] text-justify md:max-w-[70vw] text-outline-md">
+          <p className="max-w-[400px] md:max-w-[500px] text-justify text-lg text-outline-md">
             استفاده از خدمات و محصولات اوقات فراغت «سرزمین آوانیان» به صورت
             حضوری و غیرحضوری برای افرادی که به عضویت باشگاه آن درآمده باشند،
             می‌تواند منافع و مزایای خاصی ایجاد کند.

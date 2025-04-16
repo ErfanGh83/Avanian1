@@ -48,7 +48,7 @@ export default function ShopSection() {
           <h3 className="text-4xl font-bold mb-2 text-outline-lg">
             رفتن به فروشگاه آوانیان
           </h3>
-          <p className="max-w-[80vw] text-justify md:max-w-[70vw] text-outline-md">
+          <p className="max-w-[400px] md:max-w-[500px] text-justify text-lg text-outline-md">
             «فروشگاه آوانیان»، به عنوان نخستین فروشگاه اینترنتی و Market Place
             تخصصی حوزه اوقات فراغت کودک و نوجوان فعالیت خود را از بهار ۱۴۰۱ به
             نام «شبکه اوقات فراغت» آغاز نموده است.

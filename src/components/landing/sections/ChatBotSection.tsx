@@ -36,7 +36,7 @@ export default function ChatBotSection() {
           <h3 className="text-4xl font-bold mb-2 text-outline-lg">
             چت بات هوشمند آوانیان
           </h3>
-          <p className="max-w-[80vw] text-justify md:max-w-[70vw] text-outline-md">
+          <p className="text-lg text-justify max-w-[400px] md:max-w-[500px] text-outline-md">
             پیر دانا و مشاور به والدین آنها می آموزد که با کشف علاقمندی کودکان،
             صرفه جویی در زمان و هزینه ، روی توانمند و علاقمندی ایشان سرمایه
             گذاری خواهید نمود.
