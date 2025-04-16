@@ -15,7 +15,7 @@ export default function LoginSection() {
     >
       <div
         id="login"
-        className="max-w-[1100px] mx-auto flex flex-col md:flex-row justify-around items-center mt-[100px] md:mt-[150px]"
+        className="max-w-[1100px] gap-8 px-3 mx-auto flex flex-col md:flex-row justify-around items-center mt-[100px] md:mt-[150px]"
       >
         <div className="absolute bg-landing_bg4 dark:bg-dark4 top-[-200px] left-0 right-0 w-full h-[300px] z-[-4]" />
         <div className="absolute bg-landing_bg4 dark:bg-dark4 bottom-[-80px] left-0 right-0 w-full h-[150px] z-[-4]" />
@@ -51,13 +51,13 @@ export default function LoginSection() {
           <h3 className="text-4xl font-bold mb-2 text-outline-lg">
             به خانواده آوانیان بپیوندید!
           </h3>
-          <p className="max-w-[80vh] text-outline-md">
+          <p className="max-w-[80vw] text-justify md:max-w-[70vw] text-outline-md">
             استفاده از خدمات و محصولات اوقات فراغت «سرزمین آوانیان» به صورت
             حضوری و غیرحضوری برای افرادی که به عضویت باشگاه آن درآمده باشند،
             می‌تواند منافع و مزایای خاصی ایجاد کند.
           </p>
 
-          <div className="flex flex-row gap-6">
+          <div className="flex flex-row gap-3 md:gap-6">
             <SectionButton href="/sign-up">رفتن به ثبت نام</SectionButton>
             <SectionButton href="/login">رفتن به ورود</SectionButton>
           </div>

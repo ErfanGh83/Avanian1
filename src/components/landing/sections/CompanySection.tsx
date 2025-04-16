@@ -15,7 +15,7 @@ export default function CompanySection() {
         // ref={ref}
         className="relative bg-landing_bg1 dark:bg-dark1 flex flex-col-reverse md:flex-row items-center justify-around gap-8 mt-44 mb-0 pb-10 px-6 md:px-16"
       >
-        <div className="absolute bottom-[-10] z-[-2] bg-landing_bg1 dark:bg-dark1 w-full h-[20vh] " />
+        <div className="absolute bottom-[-10] z-[-2] bg-landing_bg1 dark:bg-dark1 w-full h-[100px] " />
         <motion.div
           variants={{
             hidden: { opacity: 0, x: 50 },
@@ -30,7 +30,7 @@ export default function CompanySection() {
           <h1 className="text-4xl md:text-5xl font-bold pb-4 text-outline-lg">
             سرزمین آوانیان
           </h1>
-          <p className="max-w-xl text-justify text-base md:text-lg leading-relaxed text-outline-md">
+          <p className="max-w-[80vw] text-justify md:max-w-[70vw] text-outline-md">
             سرزمین نخستین زیست بوم تخصصی اوقات و فراغت کودکان و نوجوانان ایران
             زمین است. شخصیت های جهان داستان آوانیان روایت جدیدی از روش های
             سازماندهی و برنامه ریزی خانواده ایرانی در زمان فراغتشان را بیان می
