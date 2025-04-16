@@ -7,7 +7,7 @@ import ShopSection from "@/components/landing/sections/ShopSection";
 
 export default function Home() {
   return (
-    <div className="text-white w-full">
+    <div className="text-white w-full overflow-x-hidden">
       <NavBar />
       <CompanySection />
       <QuickAccessSection />

@@ -37,7 +37,7 @@ export default function NavSVG() {
               transition={{ duration: 0.7 }}
               src="/vectors/cloud.svg"
               alt="cloud"
-              className="hidden sm:block absolute top-[10%] lg:top-[8%] right-[15%] xl:right-[20%] -z-5 sm:w-44 md:w-52"
+              className="hidden sm:block absolute top-14 right-[15%] xl:right-[20%] -z-5 sm:w-44 md:w-52"
             />
             <motion.img
               key="cloud2"
