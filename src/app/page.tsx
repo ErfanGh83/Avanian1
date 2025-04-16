@@ -1,3 +1,4 @@
+import Footer from "@/components/landing/Footer";
 import NavBar from "@/components/landing/nav/NavBar";
 import ChatBotSection from "@/components/landing/sections/ChatBotSection";
 import CompanySection from "@/components/landing/sections/CompanySection";
@@ -14,6 +15,7 @@ export default function Home() {
       <LoginSection />
       <ChatBotSection />
       <ShopSection />
+      <Footer />
     </div>
   );
 }
