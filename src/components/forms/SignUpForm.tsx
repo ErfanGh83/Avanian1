@@ -82,7 +82,7 @@ export const SignUpForm = () => {
       startCooldown();
       setSubmitError(null);
     } catch (error) {
-      setSubmitError('خطایی در فرسستادن کد پیش آمد. لطفا چند لحظه بعد مجدد امتحان کنی.');
+      setSubmitError('خطایی در فرستادن کد پیش آمد. لطفا چند لحظه بعد مجدد امتحان کنی.');
       console.error(error)
     }
   };
@@ -130,7 +130,7 @@ export const SignUpForm = () => {
             startCooldown();
           }, 300);
         } catch (error) {
-          setSubmitError('خطایی در فرسستادن کد پیش آمد. لطفا چند لحظه بعد مجدد امتحان کنید.');
+          setSubmitError('خطایی در فرستادن کد پیش آمد. لطفا چند لحظه بعد مجدد امتحان کنید.');
           console.error(error)
         }
       } else {
