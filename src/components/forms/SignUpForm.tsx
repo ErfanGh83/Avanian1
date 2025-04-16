@@ -9,8 +9,13 @@ import { validateField } from './form-components/ValidateField';
 import { FormInput } from './form-components/FormInput';
 import { motion, AnimatePresence } from 'framer-motion';
 import VerificationCodeInput from './form-components/VerificationCodeInput';
+import { requestOTP, verifyOTP } from '@/lib/api/auth';
+import { createUser } from '@/lib/api/users';
+import { setAuthToken } from '@/utils/storage';
+import { useRouter } from 'next/navigation';
 
 export const SignUpForm = () => {
+  const router = useRouter();
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [touched, setTouched] = useState<Record<string, boolean>>({});
   const [formData, setFormData] = useState<FormData>({
@@ -18,9 +23,12 @@ export const SignUpForm = () => {
     phoneNumber: '',
     age: 1
   });
+  const [verificationCode, setVerificationCode] = useState('');
   const [showVerificationCode, setShowVerificationCode] = useState(false);
   const [showPhoneInput, setShowPhoneInput] = useState(true);
   const [cooldown, setCooldown] = useState(0);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
 
   useEffect(() => {
     const newErrors: Record<string, string> = {};
@@ -55,6 +63,10 @@ export const SignUpForm = () => {
     setTouched(prev => ({ ...prev, age: true }));
   };
 
+  const handleVerificationCodeChange = (code: string) => {
+    setVerificationCode(code);
+  };
+
   const handleBlur = (e: React.FocusEvent<HTMLInputElement>) => {
     const { name } = e.target;
     setTouched(prev => ({ ...prev, [name]: true }));
@@ -64,9 +76,15 @@ export const SignUpForm = () => {
     setCooldown(180);
   };
 
-  const handleResendCode = () => {
-    console.log('Resending verification code...');
-    startCooldown();
+  const handleResendCode = async () => {
+    try {
+      await requestOTP(formData.phoneNumber);
+      startCooldown();
+      setSubmitError(null);
+    } catch (error) {
+      setSubmitError('خطایی در فرسستادن کد پیش آمد. لطفا چند لحظه بعد مجدد امتحان کنی.');
+      console.error(error)
+    }
   };
 
   const handleBackToPhone = () => {
@@ -86,8 +104,10 @@ export const SignUpForm = () => {
     return () => clearTimeout(timer);
   }, [cooldown]);
 
-  const handleSubmit = (e: FormEvent) => {
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitError(null);
 
     const allTouched = Object.keys(formData).reduce((acc, key) => {
       acc[key] = true;
@@ -101,18 +121,48 @@ export const SignUpForm = () => {
 
     if (Object.keys(validationErrors).length === 0) {
       if (!showVerificationCode) {
-        // First step: validate and show verification code
-        setShowPhoneInput(false);
-        setTimeout(() => {
-          setShowVerificationCode(true);
-          startCooldown();
-        }, 300);
+        // First step: request OTP
+        try {
+          await requestOTP(formData.phoneNumber);
+          setShowPhoneInput(false);
+          setTimeout(() => {
+            setShowVerificationCode(true);
+            startCooldown();
+          }, 300);
+        } catch (error) {
+          setSubmitError('خطایی در فرسستادن کد پیش آمد. لطفا چند لحظه بعد مجدد امتحان کنید.');
+          console.error(error)
+        }
       } else {
-        // Second step: submit form with verification code
-        console.log('Form submitted:', formData);
-        // form submission logic
+        // Second step: verify OTP and create user
+        try {
+          // Verify OTP
+          const authResponse = await verifyOTP({
+            phone_number: formData.phoneNumber,
+            otp: verificationCode
+          });
+
+          // Store token
+          setAuthToken(authResponse.access_token);
+
+          // Create user
+          const userData = {
+            name: formData.firstName,
+            phone_number: formData.phoneNumber,
+            age: formData.age
+          };
+
+          await createUser(userData);
+
+          // Redirect to home page
+          router.push('/');
+        } catch (error) {
+          setSubmitError('کد وارد شده نادرست است.');
+          console.error(error)
+        }
       }
     }
+    setIsSubmitting(false);
   };
 
   return (
@@ -120,6 +170,10 @@ export const SignUpForm = () => {
       <h2 className="text-2xl font-bold text-center text-gray-800 dark:text-gray-100 mb-2">
         ثبت نام
       </h2>
+
+      {submitError && (
+        <div className="text-red-500 text-sm mb-2">{submitError}</div>
+      )}
 
       <div className="flex flex-col gap-4">
         <AnimatePresence mode='wait'>
@@ -131,7 +185,6 @@ export const SignUpForm = () => {
                 exit={{ x: -100, opacity: 0 }}
                 transition={{ duration: 0.3 }}
               >
-
                 <FormInput
                   name="firstName"
                   value={formData.firstName}
@@ -181,6 +234,7 @@ export const SignUpForm = () => {
                 onResendCode={handleResendCode}
                 cooldown={cooldown}
                 resetCooldown={() => setCooldown(0)}
+                onChange={handleVerificationCodeChange}
               />
             </motion.div>
           )}
@@ -196,8 +250,15 @@ export const SignUpForm = () => {
       <button
         type="submit"
         className="w-full h-12 bg-blue-600 dark:bg-blue-700 hover:bg-blue-700 dark:hover:bg-blue-600 text-white font-medium rounded-lg transition-colors duration-200 mt-4 shadow-md hover:shadow-lg dark:shadow-blue-900/50"
+        disabled={isSubmitting}
       >
-        {showVerificationCode ? 'تکمیل ثبت نام' : 'ادامه'}
+        {isSubmitting ? (
+          'در حال پردازش...'
+        ) : showVerificationCode ? (
+          'تکمیل ثبت نام'
+        ) : (
+          'ادامه'
+        )}
       </button>
     </form>
   );
