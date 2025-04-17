@@ -18,11 +18,11 @@ export default function MessageItem({ sender, children }: Props) {
 
         <div
           className={`max-w-[90%] h-fit min-h-[75%] bg-t/30 relative rounded-t-xl ${
-            sender == "user" ? "bg-dark2 rounded-bl-xl ml-10" : "bg-avanianBlue rounded-br-xl mr-10"
+            sender == "user" ? "bg-dark2 rounded-bl-xl ml-10" : "bg-avanianBlue rounded-br-xl mr-1"
           }`}
         >
 
-          <div className="w-full px-6 py-3 break-words overflow-wrap-anywhere">
+          <div className="w-full px-2 md:px-6 py-3 break-words overflow-wrap-anywhere">
             <h3>{children}</h3>
           </div>
         </div>

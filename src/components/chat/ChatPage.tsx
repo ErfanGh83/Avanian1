@@ -5,7 +5,7 @@ import MessageInput from "./MessageInput";
 export default function ChatPage() {
 
   return (
-    <div className="size-full pt-8 px-6 flex flex-col overflow-hidden h-screen mx-auto">
+    <div className="size-full pt-8 px-6 flex flex-col gap-4 overflow-x-hidden h-screen mx-auto">
       <MessageContainer />
       <MessageInput />
     </div>
