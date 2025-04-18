@@ -1,7 +1,7 @@
 "use client";
 
 // import ThemeSwitchButton from "@/components/buttons/ThemeSwitcher/ThemeSwitchButton";
-import React, { ReactNode } from "react";
+import React, { ReactNode, useState } from "react";
 import { FaHome, FaUser } from "react-icons/fa";
 import { FaMessage, FaShop } from "react-icons/fa6";
 import { motion } from "framer-motion";
@@ -11,6 +11,7 @@ import { usePathname } from "next/navigation";
 import NavSVG from "./NavSVG";
 
 export default function NavBar() {
+  const [isClicked, setIsClicked] = useState("");
   const pathname = usePathname();
 
   return (
@@ -31,6 +32,7 @@ export default function NavBar() {
             return (
               <Link href={item.link} key={item.text}>
                 <motion.div
+                  onClick={() => setIsClicked(item.text)}
                   whileHover={{ scale: 1.2, y: -1 }}
                   transition={{
                     type: "spring",
@@ -38,8 +40,24 @@ export default function NavBar() {
                   }}
                   className="relative flex items-center md:gap-2 cursor-pointer md:px-1 pb-1 text-white dark:text-gray-200"
                 >
-                  <span className="hidden md:block">{item.icon}</span>
-                  <span className="text-xs sm:text-sm md:text-lg">{item.text}</span>
+                  {isClicked == item.text ? (
+                    <svg
+                      width="20"
+                      height="25"
+                      viewBox="0 0 24 24"
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="animate-spin fill-white"
+                    >
+                      <path d="M12,4a8,8,0,0,1,7.89,6.7A1.53,1.53,0,0,0,21.38,12h0a1.5,1.5,0,0,0,1.48-1.75,11,11,0,0,0-21.72,0A1.5,1.5,0,0,0,2.62,12h0a1.53,1.53,0,0,0,1.49-1.3A8,8,0,0,1,12,4Z" />
+                    </svg>
+                  ) : (
+                    <>
+                      <span className="hidden md:block">{item.icon}</span>
+                      <span className="text-xs sm:text-sm md:text-lg">
+                        {item.text}
+                      </span>
+                    </>
+                  )}
 
                   <motion.div
                     layout

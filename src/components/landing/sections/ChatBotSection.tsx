@@ -41,7 +41,7 @@ export default function ChatBotSection() {
             صرفه جویی در زمان و هزینه ، روی توانمند و علاقمندی ایشان سرمایه
             گذاری خواهید نمود.
           </p>
-          <SectionButton href="/bot">رفتن به بات</SectionButton>
+          <SectionButton href="/chat">رفتن به بات</SectionButton>
         </motion.div>
 
         <motion.img

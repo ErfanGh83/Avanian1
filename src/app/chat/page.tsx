@@ -1,7 +1,6 @@
 import ChatPage from "@/components/chat/ChatPage";
 import ChatLayout from "@/components/layouts/chat-layout/ChatLayout";
 import React from "react";
-import Image from "next/image";
 
 export default function page() {
   return (
