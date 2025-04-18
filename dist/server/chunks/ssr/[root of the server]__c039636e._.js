@@ -711,16 +711,37 @@ const createUser = async (userData)=>{
         return response.data;
     } catch (error) {
         if (__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$axios$2f$lib$2f$axios$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"].isAxiosError(error)) {
-            // Properly type the error response
-            const apiError = error.response?.data;
-            // You can add additional error processing here if needed
-            // For example, logging or transforming the error
+            const axiosError = error;
+            // Create a structured error object
+            const apiError = {
+                message: axiosError.response?.data?.detail || axiosError.response?.data?.message || axiosError.message || 'خطای ناشناخته در ایجاد کاربر',
+                code: axiosError.response?.status || axiosError.response?.data?.code || 'USER_CREATION_FAILED',
+                status: axiosError.response?.status,
+                details: {
+                    ...axiosError.response?.data,
+                    config: {
+                        url: axiosError.config?.url,
+                        method: axiosError.config?.method
+                    }
+                }
+            };
+            // Handle specific status codes with custom messages
+            if (axiosError.response?.status === 400) {
+                apiError.message = 'داده‌های ارسالی نامعتبر هستند';
+            } else if (axiosError.response?.status === 409) {
+                apiError.message = 'کاربر با این مشخصات قبلاً ثبت‌نام کرده است';
+            } else if (axiosError.response?.status === 429) {
+                apiError.message = 'درخواست‌های زیادی ارسال کرده‌اید. لطفاً کمی صبر کنید';
+            }
             throw apiError;
         }
-        // For non-Axios errors, create a generic error response
-        throw {
-            detail: 'خطایی غیر منتظره رخ داده است.'
+        // For non-Axios errors
+        const unknownError = {
+            message: error instanceof Error ? error.message : 'خطای غیرمنتظره در ایجاد کاربر',
+            code: 'UNKNOWN_ERROR',
+            details: error
         };
+        throw unknownError;
     }
 };
 }}),
