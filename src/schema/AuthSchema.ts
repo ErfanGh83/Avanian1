@@ -1,5 +1,3 @@
-import { ErrorResponse } from "./ApiErrorSchema";
-
 export interface OTPRequest {
   phone_number: string;
 }
@@ -15,4 +13,8 @@ export interface AuthResponse {
   token_type: string;
 }
 
-export type AuthErrorResponse = ErrorResponse;
+export interface AuthErrorResponse {
+  message: string;
+  code?: string;
+  details?: string;
+}
