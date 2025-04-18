@@ -579,7 +579,7 @@ const requestOTP = async (phone_number)=>{
         }
         // For non-Axios errors
         throw {
-            message: error instanceof Error ? error.message : 'Unknown error occurred',
+            message: error instanceof Error ? error.message : 'خطای اتصال رخ داده است',
             code: '500'
         };
     }
@@ -591,12 +591,17 @@ const verifyOTP = async (data)=>{
     } catch (error) {
         if (__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$axios$2f$lib$2f$axios$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].isAxiosError(error)) {
             const axiosError = error;
-            throw axiosError.response?.data ?? {
-                detail: 'خطای ناشناخته رخ داده است'
+            // Throw a structured error
+            throw {
+                message: axiosError.response?.data?.message || axiosError.message,
+                code: axiosError.response?.status?.toString() || '500',
+                details: axiosError.response?.data?.details || undefined
             };
         }
+        // For non-Axios errors
         throw {
-            detail: 'خطای اتصال رخ داده است'
+            message: error instanceof Error ? error.message : 'خطای اتصال رخ داده است',
+            code: '500'
         };
     }
 };

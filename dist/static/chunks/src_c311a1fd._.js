@@ -185,7 +185,7 @@ const requestOTP = async (phone_number)=>{
         }
         // For non-Axios errors
         throw {
-            message: error instanceof Error ? error.message : 'Unknown error occurred',
+            message: error instanceof Error ? error.message : 'خطای اتصال رخ داده است',
             code: '500'
         };
     }
@@ -197,12 +197,17 @@ const verifyOTP = async (data)=>{
     } catch (error) {
         if (__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$axios$2f$lib$2f$axios$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].isAxiosError(error)) {
             const axiosError = error;
-            throw axiosError.response?.data ?? {
-                detail: 'خطای ناشناخته رخ داده است'
+            // Throw a structured error
+            throw {
+                message: axiosError.response?.data?.message || axiosError.message,
+                code: axiosError.response?.status?.toString() || '500',
+                details: axiosError.response?.data?.details || undefined
             };
         }
+        // For non-Axios errors
         throw {
-            detail: 'خطای اتصال رخ داده است'
+            message: error instanceof Error ? error.message : 'خطای اتصال رخ داده است',
+            code: '500'
         };
     }
 };
@@ -359,11 +364,30 @@ const LoginForm = ()=>{
                 (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$utils$2f$storage$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["setAuthToken"])(authResponse.access_token);
                 // Store session id
                 (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$utils$2f$storage$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["setSessionId"])(authResponse.chat_session_id);
-                console.log(authResponse);
                 router.push('/');
             } catch (err) {
-                setError('کد تأیید نامعتبر است. لطفاً مجدداً تلاش کنید.');
-                console.error(err);
+                if (err && typeof err === 'object' && 'message' in err && 'code' in err) {
+                    const apiError = err;
+                    switch(apiError.code){
+                        case '400':
+                            setError('شماره تلفن نامعتبر است');
+                            break;
+                        case '404':
+                            setError('شماره مورد نظر یافت نشد، لطفاابتدا ثبت نام کنید');
+                            break;
+                        case '429':
+                            setError('درخواست‌های زیادی ارسال کرده‌اید. لطفاً کمی صبر کنید');
+                            break;
+                        case '500':
+                            setError('خطای سرور. لطفاً بعداً تلاش کنید');
+                            break;
+                        default:
+                            setError('خطا در ارسال کد تأیید. لطفاً مجدداً تلاش کنید');
+                    }
+                } else {
+                    // Fallback for unexpected error formats
+                    setError('خطا در ارسال کد تأیید. لطفاً مجدداً تلاش کنید');
+                }
             }
         }
         setIsSubmitting(false);
@@ -374,8 +398,28 @@ const LoginForm = ()=>{
             startCooldown();
             setError(null);
         } catch (err) {
-            setError('خطا در ارسال مجدد کد تأیید.');
-            console.error(err);
+            if (err && typeof err === 'object' && 'message' in err && 'code' in err) {
+                const apiError = err;
+                switch(apiError.code){
+                    case '400':
+                        setError('شماره تلفن نامعتبر است');
+                        break;
+                    case '404':
+                        setError('شماره مورد نظر یافت نشد، لطفاابتدا ثبت نام کنید');
+                        break;
+                    case '429':
+                        setError('درخواست‌های زیادی ارسال کرده‌اید. لطفاً کمی صبر کنید');
+                        break;
+                    case '500':
+                        setError('خطای سرور. لطفاً بعداً تلاش کنید');
+                        break;
+                    default:
+                        setError('خطا در ارسال کد تأیید. لطفاً مجدداً تلاش کنید');
+                }
+            } else {
+                // Fallback for unexpected error formats
+                setError('خطا در ارسال کد تأیید. لطفاً مجدداً تلاش کنید');
+            }
         }
     };
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
@@ -402,7 +446,7 @@ const LoginForm = ()=>{
                 children: "ورود"
             }, void 0, false, {
                 fileName: "[project]/src/components/forms/LoginForm.tsx",
-                lineNumber: 124,
+                lineNumber: 164,
                 columnNumber: 7
             }, this),
             error && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -410,7 +454,7 @@ const LoginForm = ()=>{
                 children: error
             }, void 0, false, {
                 fileName: "[project]/src/components/forms/LoginForm.tsx",
-                lineNumber: 126,
+                lineNumber: 166,
                 columnNumber: 9
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -436,7 +480,7 @@ const LoginForm = ()=>{
                                             className: "mx-3 text-gray-500 dark:text-gray-300"
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/forms/LoginForm.tsx",
-                                            lineNumber: 141,
+                                            lineNumber: 181,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -448,13 +492,13 @@ const LoginForm = ()=>{
                                             onChange: (e)=>setPhoneNumber(e.target.value)
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/forms/LoginForm.tsx",
-                                            lineNumber: 142,
+                                            lineNumber: 182,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, "phone-input", true, {
                                     fileName: "[project]/src/components/forms/LoginForm.tsx",
-                                    lineNumber: 135,
+                                    lineNumber: 175,
                                     columnNumber: 15
                                 }, this),
                                 showVerificationCode && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].div, {
@@ -482,23 +526,23 @@ const LoginForm = ()=>{
                                         onChange: (code)=>setVerificationCode(code)
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/forms/LoginForm.tsx",
-                                        lineNumber: 162,
+                                        lineNumber: 202,
                                         columnNumber: 17
                                     }, this)
                                 }, "verification-input", false, {
                                     fileName: "[project]/src/components/forms/LoginForm.tsx",
-                                    lineNumber: 154,
+                                    lineNumber: 194,
                                     columnNumber: 15
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/forms/LoginForm.tsx",
-                            lineNumber: 133,
+                            lineNumber: 173,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/src/components/forms/LoginForm.tsx",
-                        lineNumber: 130,
+                        lineNumber: 170,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -508,18 +552,18 @@ const LoginForm = ()=>{
                             children: "حساب کاربری ندارید ؟ از اینجا می توانید ایجاد کنید."
                         }, void 0, false, {
                             fileName: "[project]/src/components/forms/LoginForm.tsx",
-                            lineNumber: 175,
+                            lineNumber: 215,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/src/components/forms/LoginForm.tsx",
-                        lineNumber: 174,
+                        lineNumber: 214,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/forms/LoginForm.tsx",
-                lineNumber: 128,
+                lineNumber: 168,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -529,13 +573,13 @@ const LoginForm = ()=>{
                 children: isSubmitting ? 'در حال پردازش...' : showVerificationCode ? 'تأیید و ورود' : 'ارسال کد'
             }, void 0, false, {
                 fileName: "[project]/src/components/forms/LoginForm.tsx",
-                lineNumber: 179,
+                lineNumber: 219,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/components/forms/LoginForm.tsx",
-        lineNumber: 123,
+        lineNumber: 163,
         columnNumber: 5
     }, this);
 };

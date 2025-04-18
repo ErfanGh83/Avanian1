@@ -89,12 +89,31 @@ const LoginForm = () => {
         // Store session id
         setSessionId(authResponse.chat_session_id)
 
-        console.log(authResponse)
-
         router.push('/')
       } catch (err) {
-        setError('کد تأیید نامعتبر است. لطفاً مجدداً تلاش کنید.')
-        console.error(err)
+        if (err && typeof err === 'object' && 'message' in err && 'code' in err) {
+          const apiError = err as APIError;
+
+          switch (apiError.code) {
+            case '400':
+              setError('شماره تلفن نامعتبر است');
+              break;
+            case '404':
+              setError('شماره مورد نظر یافت نشد، لطفاابتدا ثبت نام کنید')
+              break;
+            case '429':
+              setError('درخواست‌های زیادی ارسال کرده‌اید. لطفاً کمی صبر کنید');
+              break;
+            case '500':
+              setError('خطای سرور. لطفاً بعداً تلاش کنید');
+              break;
+            default:
+              setError('خطا در ارسال کد تأیید. لطفاً مجدداً تلاش کنید');
+          }
+        } else {
+          // Fallback for unexpected error formats
+          setError('خطا در ارسال کد تأیید. لطفاً مجدداً تلاش کنید');
+        }
       }
     }
     setIsSubmitting(false)
@@ -106,8 +125,29 @@ const LoginForm = () => {
       startCooldown()
       setError(null)
     } catch (err) {
-      setError('خطا در ارسال مجدد کد تأیید.')
-      console.error(err)
+      if (err && typeof err === 'object' && 'message' in err && 'code' in err) {
+        const apiError = err as APIError;
+
+        switch (apiError.code) {
+          case '400':
+            setError('شماره تلفن نامعتبر است');
+            break;
+          case '404':
+            setError('شماره مورد نظر یافت نشد، لطفاابتدا ثبت نام کنید')
+            break;
+          case '429':
+            setError('درخواست‌های زیادی ارسال کرده‌اید. لطفاً کمی صبر کنید');
+            break;
+          case '500':
+            setError('خطای سرور. لطفاً بعداً تلاش کنید');
+            break;
+          default:
+            setError('خطا در ارسال کد تأیید. لطفاً مجدداً تلاش کنید');
+        }
+      } else {
+        // Fallback for unexpected error formats
+        setError('خطا در ارسال کد تأیید. لطفاً مجدداً تلاش کنید');
+      }
     }
   }
 

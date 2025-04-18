@@ -18,7 +18,7 @@ export const requestOTP = async (phone_number: string): Promise<void> => {
     }
     // For non-Axios errors
     throw {
-      message: error instanceof Error ? error.message : 'Unknown error occurred',
+      message: error instanceof Error ? error.message : 'خطای اتصال رخ داده است',
       code: '500'
     };
   }
@@ -30,8 +30,17 @@ export const verifyOTP = async (data: OTPVerifyRequest): Promise<AuthResponse> =
   } catch (error) {
     if (axios.isAxiosError(error)) {
       const axiosError = error as AxiosError<AuthErrorResponse>;
-      throw axiosError.response?.data ?? { detail: 'خطای ناشناخته رخ داده است' };
+      // Throw a structured error
+      throw {
+        message: axiosError.response?.data?.message || axiosError.message,
+        code: axiosError.response?.status?.toString() || '500',
+        details: axiosError.response?.data?.details || undefined
+      };
     }
-    throw { detail: 'خطای اتصال رخ داده است' };
+    // For non-Axios errors
+    throw {
+      message: error instanceof Error ? error.message : 'خطای اتصال رخ داده است',
+      code: '500'
+    };
   }
 };

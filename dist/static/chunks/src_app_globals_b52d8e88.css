@@ -985,6 +985,11 @@ img, video {
   background-color: #ffffff80;
 }
 
+.bg-red-400 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(248 113 113 / var(--tw-bg-opacity, 1));
+}
+
 .fill-landing_bg2 {
   fill: #f2ffff;
 }
