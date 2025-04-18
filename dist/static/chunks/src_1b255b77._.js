@@ -1,4 +1,4 @@
-(globalThis.TURBOPACK = globalThis.TURBOPACK || []).push(["static/chunks/src_7751c177._.js", {
+(globalThis.TURBOPACK = globalThis.TURBOPACK || []).push(["static/chunks/src_1b255b77._.js", {
 
 "[project]/src/components/chat/MessageItem.tsx [app-client] (ecmascript)": ((__turbopack_context__) => {
 "use strict";
@@ -139,6 +139,277 @@ if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelper
     __turbopack_context__.k.registerExports(module, globalThis.$RefreshHelpers$);
 }
 }}),
+"[project]/src/components/chat/MessageContainer.tsx [app-client] (ecmascript)": ((__turbopack_context__) => {
+"use strict";
+
+var { g: global, __dirname, k: __turbopack_refresh__, m: module } = __turbopack_context__;
+{
+/* eslint-disable @typescript-eslint/no-explicit-any */ __turbopack_context__.s({
+    "default": (()=>MessageContainer)
+});
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/jsx-dev-runtime.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$containers$2f$chat$2d$containers$2f$ChatBox$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/components/containers/chat-containers/ChatBox.tsx [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$chat$2f$MessageItem$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/components/chat/MessageItem.tsx [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/image.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$axios$2f$lib$2f$axios$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/axios/lib/axios.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$toastify$2f$dist$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/react-toastify/dist/index.mjs [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/framer-motion/dist/es/render/components/motion/proxy.mjs [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$components$2f$AnimatePresence$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/framer-motion/dist/es/components/AnimatePresence/index.mjs [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/client/app-dir/link.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/navigation.js [app-client] (ecmascript)");
+;
+var _s = __turbopack_context__.k.signature();
+"use client";
+;
+;
+;
+;
+;
+;
+;
+;
+;
+function MessageContainer({ setMessages, messages }) {
+    _s();
+    const [loading, setLoading] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(true);
+    const [isAuthenticated, setIsAuthenticated] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
+    const [token, setToken] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(null);
+    const [sessionId, setSessionId] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(null);
+    const router = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRouter"])();
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
+        "MessageContainer.useEffect": ()=>{}
+    }["MessageContainer.useEffect"], []);
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
+        "MessageContainer.useEffect": ()=>{
+            const fetchMessages = {
+                "MessageContainer.useEffect.fetchMessages": async ()=>{
+                    setLoading(true);
+                    if (!sessionId || !token) {
+                        setIsAuthenticated(false);
+                        __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$toastify$2f$dist$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["toast"].error(/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                            className: "flex items-center gap-1",
+                            children: [
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                    children: "لطفا ابتدا وارد شوید"
+                                }, void 0, false, {
+                                    fileName: "[project]/src/components/chat/MessageContainer.tsx",
+                                    lineNumber: 41,
+                                    columnNumber: 13
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
+                                    href: "/login",
+                                    className: "text-white underline hover:text-blue-200 font-medium",
+                                    onClick: {
+                                        "MessageContainer.useEffect.fetchMessages": (e)=>{
+                                            e.stopPropagation(); // Prevent toast from closing
+                                            router.push('/login');
+                                        }
+                                    }["MessageContainer.useEffect.fetchMessages"],
+                                    children: "اینجا"
+                                }, void 0, false, {
+                                    fileName: "[project]/src/components/chat/MessageContainer.tsx",
+                                    lineNumber: 42,
+                                    columnNumber: 13
+                                }, this)
+                            ]
+                        }, void 0, true, {
+                            fileName: "[project]/src/components/chat/MessageContainer.tsx",
+                            lineNumber: 40,
+                            columnNumber: 11
+                        }, this), {
+                            autoClose: 5000,
+                            position: "bottom-left",
+                            className: '!bg-red-600 !text-white',
+                            closeButton: true
+                        });
+                        setLoading(false);
+                        return;
+                    }
+                    setIsAuthenticated(true);
+                    try {
+                        const response = await __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$axios$2f$lib$2f$axios$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].get(`http://188.34.162.79:8789/chat/sessions/${sessionId}/history`, {
+                            headers: {
+                                Authorization: `Bearer ${token}`,
+                                "Session-Id": sessionId
+                            }
+                        });
+                        setMessages(response.data);
+                    } catch (err) {
+                        __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$toastify$2f$dist$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["toast"].error(err?.response?.data?.detail || "خطا در دریافت پیام‌ها", {
+                            position: "bottom-left",
+                            autoClose: 3000,
+                            className: '!bg-red-600 !text-white'
+                        });
+                    } finally{
+                        setLoading(false);
+                    }
+                }
+            }["MessageContainer.useEffect.fetchMessages"];
+            fetchMessages();
+        }
+    }["MessageContainer.useEffect"], [
+        setMessages,
+        router
+    ]);
+    if (!isAuthenticated) {
+        return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+            className: "flex flex-col justify-center items-center my-auto text-gray-600 dark:text-gray-300 text-lg gap-4",
+            children: [
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                    children: "برای مشاهده پیام‌ها لطفا وارد شوید"
+                }, void 0, false, {
+                    fileName: "[project]/src/components/chat/MessageContainer.tsx",
+                    lineNumber: 95,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
+                    href: "/login",
+                    className: "px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors",
+                    children: "ورود به حساب کاربری"
+                }, void 0, false, {
+                    fileName: "[project]/src/components/chat/MessageContainer.tsx",
+                    lineNumber: 96,
+                    columnNumber: 9
+                }, this)
+            ]
+        }, void 0, true, {
+            fileName: "[project]/src/components/chat/MessageContainer.tsx",
+            lineNumber: 94,
+            columnNumber: 7
+        }, this);
+    }
+    if (loading) {
+        return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+            className: "flex justify-center items-center my-auto text-gray-600 dark:text-gray-300 text-lg",
+            children: "در حال بارگذاری..."
+        }, void 0, false, {
+            fileName: "[project]/src/components/chat/MessageContainer.tsx",
+            lineNumber: 108,
+            columnNumber: 7
+        }, this);
+    }
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Fragment"], {
+        children: messages && messages.length > 0 ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+            className: "w-full h-full overflow-hidden flex flex-row-reverse items-center gap-6",
+            children: [
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$components$2f$AnimatePresence$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["AnimatePresence"], {
+                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].div, {
+                        initial: {
+                            opacity: 0,
+                            x: -40
+                        },
+                        animate: {
+                            opacity: 1,
+                            x: 0
+                        },
+                        transition: {
+                            duration: 0.5
+                        },
+                        className: "hidden lg:block w-0 md:w-full lg:w-1/4",
+                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
+                            src: "/vectors/owl.svg",
+                            alt: "زانیار",
+                            width: 200,
+                            height: 200,
+                            className: "w-32 md:w-44 lg:w-64 h-[60vh]"
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/chat/MessageContainer.tsx",
+                            lineNumber: 126,
+                            columnNumber: 15
+                        }, this)
+                    }, "owl-image", false, {
+                        fileName: "[project]/src/components/chat/MessageContainer.tsx",
+                        lineNumber: 119,
+                        columnNumber: 13
+                    }, this)
+                }, void 0, false, {
+                    fileName: "[project]/src/components/chat/MessageContainer.tsx",
+                    lineNumber: 118,
+                    columnNumber: 11
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                    className: "w-[100%] h-[70vh] lg:w-3/4",
+                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$containers$2f$chat$2d$containers$2f$ChatBox$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
+                        data: messages
+                    }, void 0, false, {
+                        fileName: "[project]/src/components/chat/MessageContainer.tsx",
+                        lineNumber: 137,
+                        columnNumber: 13
+                    }, this)
+                }, void 0, false, {
+                    fileName: "[project]/src/components/chat/MessageContainer.tsx",
+                    lineNumber: 136,
+                    columnNumber: 11
+                }, this)
+            ]
+        }, void 0, true, {
+            fileName: "[project]/src/components/chat/MessageContainer.tsx",
+            lineNumber: 117,
+            columnNumber: 9
+        }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+            className: "m-auto items-center gap-2 md:gap-16 px-1 md:px-8 py-4 max-w-[90vw] md:max-w-[70vw] lg:px-16 bg-white/50 rounded-2xl flex flex-row ",
+            children: [
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$chat$2f$MessageItem$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
+                    sender: "ai",
+                    children: "فرصت طلایی رشد و شکوفایی فرزندتان در لحظات فراغت پنهان است؛ لحظاتی که به سرعت می‌گذرند. من زانیار، پیردانای آوانیان، با دانشی که کمتر جایی خواهید یافت، اینجا هستم تا نقشه راه این گنج پنهان را به شما نشان دهم. آیا آماده‌اید تا اولین قدم را برای تضمین آینده‌ای درخشان‌تر از طریق اوقات فراغت بردارید؟ سوالتان چیست؟"
+                }, void 0, false, {
+                    fileName: "[project]/src/components/chat/MessageContainer.tsx",
+                    lineNumber: 142,
+                    columnNumber: 11
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].div, {
+                    initial: {
+                        opacity: 0,
+                        x: 50
+                    },
+                    animate: {
+                        opacity: 1,
+                        x: 0
+                    },
+                    exit: {
+                        opacity: 0,
+                        x: 100
+                    },
+                    transition: {
+                        duration: 0.5
+                    },
+                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
+                        src: "/vectors/owl.svg",
+                        alt: "زانیار",
+                        width: 200,
+                        height: 200,
+                        className: "w-32 md:w-44 lg:w-64"
+                    }, void 0, false, {
+                        fileName: "[project]/src/components/chat/MessageContainer.tsx",
+                        lineNumber: 156,
+                        columnNumber: 13
+                    }, this)
+                }, "owl", false, {
+                    fileName: "[project]/src/components/chat/MessageContainer.tsx",
+                    lineNumber: 149,
+                    columnNumber: 11
+                }, this)
+            ]
+        }, void 0, true, {
+            fileName: "[project]/src/components/chat/MessageContainer.tsx",
+            lineNumber: 141,
+            columnNumber: 9
+        }, this)
+    }, void 0, false);
+}
+_s(MessageContainer, "RLXPPqlU4oEhwE1oqj3F86QWac0=", false, function() {
+    return [
+        __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRouter"]
+    ];
+});
+_c = MessageContainer;
+var _c;
+__turbopack_context__.k.register(_c, "MessageContainer");
+if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {
+    __turbopack_context__.k.registerExports(module, globalThis.$RefreshHelpers$);
+}
+}}),
 "[project]/src/utils/storage.ts [app-client] (ecmascript)": ((__turbopack_context__) => {
 "use strict";
 
@@ -184,276 +455,6 @@ const removeAuthToken = ()=>{
         localStorage.removeItem('access_token');
     }
 };
-if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {
-    __turbopack_context__.k.registerExports(module, globalThis.$RefreshHelpers$);
-}
-}}),
-"[project]/src/components/chat/MessageContainer.tsx [app-client] (ecmascript)": ((__turbopack_context__) => {
-"use strict";
-
-var { g: global, __dirname, k: __turbopack_refresh__, m: module } = __turbopack_context__;
-{
-/* eslint-disable @typescript-eslint/no-explicit-any */ __turbopack_context__.s({
-    "default": (()=>MessageContainer)
-});
-var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/jsx-dev-runtime.js [app-client] (ecmascript)");
-var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)");
-var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$containers$2f$chat$2d$containers$2f$ChatBox$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/components/containers/chat-containers/ChatBox.tsx [app-client] (ecmascript)");
-var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$chat$2f$MessageItem$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/components/chat/MessageItem.tsx [app-client] (ecmascript)");
-var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/image.js [app-client] (ecmascript)");
-var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$utils$2f$storage$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/utils/storage.ts [app-client] (ecmascript)");
-var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$axios$2f$lib$2f$axios$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/axios/lib/axios.js [app-client] (ecmascript)");
-var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$toastify$2f$dist$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/react-toastify/dist/index.mjs [app-client] (ecmascript)");
-var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/framer-motion/dist/es/render/components/motion/proxy.mjs [app-client] (ecmascript)");
-var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$components$2f$AnimatePresence$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/framer-motion/dist/es/components/AnimatePresence/index.mjs [app-client] (ecmascript)");
-var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/client/app-dir/link.js [app-client] (ecmascript)");
-var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/navigation.js [app-client] (ecmascript)");
-;
-var _s = __turbopack_context__.k.signature();
-"use client";
-;
-;
-;
-;
-;
-;
-;
-;
-;
-;
-function MessageContainer({ setMessages, messages }) {
-    _s();
-    const [loading, setLoading] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(true);
-    const [isAuthenticated, setIsAuthenticated] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
-    const router = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRouter"])();
-    (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
-        "MessageContainer.useEffect": ()=>{
-            const fetchMessages = {
-                "MessageContainer.useEffect.fetchMessages": async ()=>{
-                    setLoading(true);
-                    const token = (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$utils$2f$storage$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["getAuthToken"])();
-                    const sessionId = (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$utils$2f$storage$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["getSessionId"])();
-                    if (!sessionId || !token) {
-                        setIsAuthenticated(false);
-                        __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$toastify$2f$dist$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["toast"].error(/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                            className: "flex items-center gap-1",
-                            children: [
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                    children: "لطفا ابتدا وارد شوید"
-                                }, void 0, false, {
-                                    fileName: "[project]/src/components/chat/MessageContainer.tsx",
-                                    lineNumber: 38,
-                                    columnNumber: 13
-                                }, this),
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
-                                    href: "/login",
-                                    className: "text-white underline hover:text-blue-200 font-medium",
-                                    onClick: {
-                                        "MessageContainer.useEffect.fetchMessages": (e)=>{
-                                            e.stopPropagation(); // Prevent toast from closing
-                                            router.push('/login');
-                                        }
-                                    }["MessageContainer.useEffect.fetchMessages"],
-                                    children: "اینجا"
-                                }, void 0, false, {
-                                    fileName: "[project]/src/components/chat/MessageContainer.tsx",
-                                    lineNumber: 39,
-                                    columnNumber: 13
-                                }, this)
-                            ]
-                        }, void 0, true, {
-                            fileName: "[project]/src/components/chat/MessageContainer.tsx",
-                            lineNumber: 37,
-                            columnNumber: 11
-                        }, this), {
-                            autoClose: 5000,
-                            position: "bottom-left",
-                            className: '!bg-red-600 !text-white',
-                            closeButton: true
-                        });
-                        setLoading(false);
-                        return;
-                    }
-                    setIsAuthenticated(true);
-                    try {
-                        const response = await __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$axios$2f$lib$2f$axios$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].get(`http://188.34.162.79:8789/chat/sessions/${sessionId}/history`, {
-                            headers: {
-                                Authorization: `Bearer ${token}`,
-                                "Session-Id": sessionId
-                            }
-                        });
-                        setMessages(response.data);
-                    } catch (err) {
-                        __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$toastify$2f$dist$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["toast"].error(err?.response?.data?.detail || "خطا در دریافت پیام‌ها", {
-                            position: "bottom-left",
-                            autoClose: 3000,
-                            className: '!bg-red-600 !text-white'
-                        });
-                    } finally{
-                        setLoading(false);
-                    }
-                }
-            }["MessageContainer.useEffect.fetchMessages"];
-            fetchMessages();
-        }
-    }["MessageContainer.useEffect"], [
-        setMessages,
-        router
-    ]);
-    if (!isAuthenticated) {
-        return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-            className: "flex flex-col justify-center items-center my-auto text-gray-600 dark:text-gray-300 text-lg gap-4",
-            children: [
-                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                    children: "برای مشاهده پیام‌ها لطفا وارد شوید"
-                }, void 0, false, {
-                    fileName: "[project]/src/components/chat/MessageContainer.tsx",
-                    lineNumber: 92,
-                    columnNumber: 9
-                }, this),
-                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
-                    href: "/login",
-                    className: "px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors",
-                    children: "ورود به حساب کاربری"
-                }, void 0, false, {
-                    fileName: "[project]/src/components/chat/MessageContainer.tsx",
-                    lineNumber: 93,
-                    columnNumber: 9
-                }, this)
-            ]
-        }, void 0, true, {
-            fileName: "[project]/src/components/chat/MessageContainer.tsx",
-            lineNumber: 91,
-            columnNumber: 7
-        }, this);
-    }
-    if (loading) {
-        return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-            className: "flex justify-center items-center my-auto text-gray-600 dark:text-gray-300 text-lg",
-            children: "در حال بارگذاری..."
-        }, void 0, false, {
-            fileName: "[project]/src/components/chat/MessageContainer.tsx",
-            lineNumber: 105,
-            columnNumber: 7
-        }, this);
-    }
-    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Fragment"], {
-        children: messages && messages.length > 0 ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-            className: "w-full h-full overflow-hidden flex flex-row-reverse items-center gap-6",
-            children: [
-                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$components$2f$AnimatePresence$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["AnimatePresence"], {
-                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].div, {
-                        initial: {
-                            opacity: 0,
-                            x: -40
-                        },
-                        animate: {
-                            opacity: 1,
-                            x: 0
-                        },
-                        transition: {
-                            duration: 0.5
-                        },
-                        className: "hidden lg:block w-0 md:w-full lg:w-1/4",
-                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
-                            src: "/vectors/owl.svg",
-                            alt: "زانیار",
-                            width: 200,
-                            height: 200,
-                            className: "w-32 md:w-44 lg:w-64 h-[60vh]"
-                        }, void 0, false, {
-                            fileName: "[project]/src/components/chat/MessageContainer.tsx",
-                            lineNumber: 123,
-                            columnNumber: 15
-                        }, this)
-                    }, "owl-image", false, {
-                        fileName: "[project]/src/components/chat/MessageContainer.tsx",
-                        lineNumber: 116,
-                        columnNumber: 13
-                    }, this)
-                }, void 0, false, {
-                    fileName: "[project]/src/components/chat/MessageContainer.tsx",
-                    lineNumber: 115,
-                    columnNumber: 11
-                }, this),
-                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                    className: "w-[100%] h-[70vh] lg:w-3/4",
-                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$containers$2f$chat$2d$containers$2f$ChatBox$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
-                        data: messages
-                    }, void 0, false, {
-                        fileName: "[project]/src/components/chat/MessageContainer.tsx",
-                        lineNumber: 134,
-                        columnNumber: 13
-                    }, this)
-                }, void 0, false, {
-                    fileName: "[project]/src/components/chat/MessageContainer.tsx",
-                    lineNumber: 133,
-                    columnNumber: 11
-                }, this)
-            ]
-        }, void 0, true, {
-            fileName: "[project]/src/components/chat/MessageContainer.tsx",
-            lineNumber: 114,
-            columnNumber: 9
-        }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-            className: "m-auto items-center gap-2 md:gap-16 px-1 md:px-8 py-4 max-w-[90vw] md:max-w-[70vw] lg:px-16 bg-white/50 rounded-2xl flex flex-row ",
-            children: [
-                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$chat$2f$MessageItem$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
-                    sender: "ai",
-                    children: "فرصت طلایی رشد و شکوفایی فرزندتان در لحظات فراغت پنهان است؛ لحظاتی که به سرعت می‌گذرند. من زانیار، پیردانای آوانیان، با دانشی که کمتر جایی خواهید یافت، اینجا هستم تا نقشه راه این گنج پنهان را به شما نشان دهم. آیا آماده‌اید تا اولین قدم را برای تضمین آینده‌ای درخشان‌تر از طریق اوقات فراغت بردارید؟ سوالتان چیست؟"
-                }, void 0, false, {
-                    fileName: "[project]/src/components/chat/MessageContainer.tsx",
-                    lineNumber: 139,
-                    columnNumber: 11
-                }, this),
-                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].div, {
-                    initial: {
-                        opacity: 0,
-                        x: 50
-                    },
-                    animate: {
-                        opacity: 1,
-                        x: 0
-                    },
-                    exit: {
-                        opacity: 0,
-                        x: 100
-                    },
-                    transition: {
-                        duration: 0.5
-                    },
-                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
-                        src: "/vectors/owl.svg",
-                        alt: "زانیار",
-                        width: 200,
-                        height: 200,
-                        className: "w-32 md:w-44 lg:w-64"
-                    }, void 0, false, {
-                        fileName: "[project]/src/components/chat/MessageContainer.tsx",
-                        lineNumber: 153,
-                        columnNumber: 13
-                    }, this)
-                }, "owl", false, {
-                    fileName: "[project]/src/components/chat/MessageContainer.tsx",
-                    lineNumber: 146,
-                    columnNumber: 11
-                }, this)
-            ]
-        }, void 0, true, {
-            fileName: "[project]/src/components/chat/MessageContainer.tsx",
-            lineNumber: 138,
-            columnNumber: 9
-        }, this)
-    }, void 0, false);
-}
-_s(MessageContainer, "Vi+wLlwZluttM3sKtiU14DFeMcE=", false, function() {
-    return [
-        __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRouter"]
-    ];
-});
-_c = MessageContainer;
-var _c;
-__turbopack_context__.k.register(_c, "MessageContainer");
 if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {
     __turbopack_context__.k.registerExports(module, globalThis.$RefreshHelpers$);
 }
@@ -726,4 +727,4 @@ if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelper
 }}),
 }]);
 
-//# sourceMappingURL=src_7751c177._.js.map
+//# sourceMappingURL=src_1b255b77._.js.map

@@ -10,6 +10,8 @@ import axios from "axios";
 import { Message } from "@/schema/chatDataSchema";
 import { toast } from "react-toastify";
 import { motion, AnimatePresence } from "framer-motion";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 export default function MessageContainer({
   setMessages,
@@ -19,22 +21,45 @@ export default function MessageContainer({
   messages: Message[] | null;
 }) {
   const [loading, setLoading] = useState(true);
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const router = useRouter();
 
   useEffect(() => {
     const fetchMessages = async () => {
       setLoading(true);
-
+      
       const token = getAuthToken();
       const sessionId = getSessionId();
+      
       if (!sessionId || !token) {
-        toast.error("لطفا ابتدا وارد شوید ", {
-          autoClose: 1500,
-          position: "bottom-left",
-        });
-        setLoading(false)
+        setIsAuthenticated(false);
+        toast.error(
+          <div className="flex items-center gap-1">
+            <span>لطفا ابتدا وارد شوید</span>
+            <Link 
+              href="/login" 
+              className="text-white underline hover:text-blue-200 font-medium"
+              onClick={(e) => {
+                e.stopPropagation(); // Prevent toast from closing
+                router.push('/login');
+              }}
+            >
+              اینجا
+            </Link>
+          </div>,
+          {
+            autoClose: 5000,
+            position: "bottom-left",
+            className: '!bg-red-600 !text-white',
+            closeButton: true,
+          }
+        );
+        setLoading(false);
         return;
       }
 
+      setIsAuthenticated(true);
+      
       try {
         const response = await axios.get(
           `http://188.34.162.79:8789/chat/sessions/${sessionId}/history`,
@@ -48,9 +73,10 @@ export default function MessageContainer({
 
         setMessages(response.data);
       } catch (err: any) {
-        toast.error(err?.response?.data || "خطا در دریافت پیام‌ها", {
+        toast.error(err?.response?.data?.detail || "خطا در دریافت پیام‌ها", {
           position: "bottom-left",
-          autoClose: 1500,
+          autoClose: 3000,
+          className: '!bg-red-600 !text-white',
         });
       } finally {
         setLoading(false);
@@ -58,7 +84,21 @@ export default function MessageContainer({
     };
 
     fetchMessages();
-  }, [setMessages]);
+  }, [setMessages, router]);
+
+  if (!isAuthenticated) {
+    return (
+      <div className="flex flex-col justify-center items-center my-auto text-gray-600 dark:text-gray-300 text-lg gap-4">
+        <p>برای مشاهده پیام‌ها لطفا وارد شوید</p>
+        <Link 
+          href="/login"
+          className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+        >
+          ورود به حساب کاربری
+        </Link>
+      </div>
+    );
+  }
 
   if (loading) {
     return (
