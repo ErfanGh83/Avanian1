@@ -10,11 +10,26 @@ export default function Home() {
   return (
     <div className="text-white w-full overflow-x-hidden">
       <NavBar />
-      <CompanySection />
-      <QuickAccessSection />
-      <LoginSection />
-      <ChatBotSection />
-      <ShopSection />
+      <section>
+        <CompanySection />
+      </section>
+
+      <section>
+        <QuickAccessSection />
+      </section>
+
+      <section>
+        <LoginSection />
+      </section>
+
+      <section>
+        <ChatBotSection />
+      </section>
+
+      <section>
+        <ShopSection />
+      </section>
+
       <Footer />
     </div>
   );
