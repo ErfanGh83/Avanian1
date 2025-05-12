@@ -58,7 +58,8 @@ const metadata = {
     keywords: [
         "Next.js",
         "Vazirmatn",
-        "Tailwind"
+        "Tailwind",
+        "Bkkt"
     ]
 };
 function RootLayout({ children }) {
@@ -67,7 +68,7 @@ function RootLayout({ children }) {
         lang: "fa",
         suppressHydrationWarning: true,
         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("body", {
-            className: "w-screen h-screen font-vazirmatn overflow-x-hidden overflow-y-auto",
+            className: "w-screen h-screen font-bkkt overflow-x-hidden overflow-y-auto",
             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$providers$2f$ThemeProvider$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["ThemeProviders"], {
                 children: children
             }, void 0, false, {
