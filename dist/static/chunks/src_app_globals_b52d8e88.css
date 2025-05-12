@@ -1525,14 +1525,6 @@ img, video {
     display: block;
   }
 
-  .md\:h-full {
-    height: 100%;
-  }
-
-  .md\:w-1\/2 {
-    width: 50%;
-  }
-
   .md\:w-28 {
     width: 7rem;
   }
@@ -1703,16 +1695,8 @@ img, video {
     width: 800px;
   }
 
-  .xl\:max-w-\[1420px\] {
-    max-width: 1420px;
-  }
-
   .xl\:max-w-\[1500px\] {
     max-width: 1500px;
-  }
-
-  .xl\:rounded-3xl {
-    border-radius: 1.5rem;
   }
 
   .xl\:shadow-2xl {
