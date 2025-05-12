@@ -1353,7 +1353,7 @@ img, video {
 
 @font-face {
   font-family: Bkkt;
-  src: url("/fonts/bkkt/BonyadeKoodakKoochakNoEn-Thin.woff") format("woff");
+  src: url("/fonts/bkkt/BonyadeKoodakKoochak-Thin.woff") format("woff");
   font-weight: 100;
   font-style: normal;
   font-display: swap;
@@ -1361,7 +1361,7 @@ img, video {
 
 @font-face {
   font-family: Bkkt;
-  src: url("/fonts/bkkt/BonyadeKoodakKoochakNoEn-ExtraLight.woff") format("woff");
+  src: url("/fonts/bkkt/BonyadeKoodakKoochak-ExtraLight.woff") format("woff");
   font-weight: 200;
   font-style: normal;
   font-display: swap;
@@ -1369,7 +1369,7 @@ img, video {
 
 @font-face {
   font-family: Bkkt;
-  src: url("/fonts/bkkt/BonyadeKoodakKoochakNoEn-Light.woff") format("woff");
+  src: url("/fonts/bkkt/BonyadeKoodakKoochak-Light.woff") format("woff");
   font-weight: 300;
   font-style: normal;
   font-display: swap;
@@ -1377,7 +1377,7 @@ img, video {
 
 @font-face {
   font-family: Bkkt;
-  src: url("/fonts/bkkt/BonyadeKoodakKoochakNoEn-Medium.woff") format("woff");
+  src: url("/fonts/bkkt/BonyadeKoodakKoochak-Medium.woff") format("woff");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -1385,7 +1385,7 @@ img, video {
 
 @font-face {
   font-family: Bkkt;
-  src: url("/fonts/bkkt/BonyadeKoodakKoochakNoEn-SemiBold.woff") format("woff");
+  src: url("/fonts/bkkt/BonyadeKoodakKoochak-SemiBold.woff") format("woff");
   font-weight: 500;
   font-style: normal;
   font-display: swap;
@@ -1393,7 +1393,7 @@ img, video {
 
 @font-face {
   font-family: Bkkt;
-  src: url("/fonts/bkkt/BonyadeKoodakKoochakNoEn-Bold.woff") format("woff");
+  src: url("/fonts/bkkt/BonyadeKoodakKoochak-Bold.woff") format("woff");
   font-weight: 700;
   font-style: normal;
   font-display: swap;
@@ -1401,7 +1401,7 @@ img, video {
 
 @font-face {
   font-family: Bkkt;
-  src: url("/fonts/bkkt/BonyadeKoodakKoochakNoEn-Black.woff") format("woff");
+  src: url("/fonts/bkkt/BonyadeKoodakKoochak-Black.woff") format("woff");
   font-weight: 900;
   font-style: normal;
   font-display: swap;
