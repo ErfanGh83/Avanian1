@@ -715,6 +715,10 @@ img, video {
   max-width: 28rem;
 }
 
+.max-w-\[300px\] {
+  max-width: 300px;
+}
+
 @keyframes spin {
   to {
     transform: rotate(360deg);
@@ -1671,6 +1675,22 @@ img, video {
 
   .md\:max-w-\[70vw\] {
     max-width: 70vw;
+  }
+
+  .md\:max-w-\[400px\] {
+    max-width: 400px;
+  }
+
+  .md\:max-w-\[450px\] {
+    max-width: 450px;
+  }
+
+  .md\:max-w-\[460px\] {
+    max-width: 460px;
+  }
+
+  .md\:max-w-\[465px\] {
+    max-width: 465px;
   }
 
   .md\:flex-row {

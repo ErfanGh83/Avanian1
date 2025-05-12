@@ -594,7 +594,7 @@ function ChatBotSection() {
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                 className: "text-lg text-justify max-w-[400px] md:max-w-[500px] text-outline-md",
-                                children: "پیر دانا و مشاور به والدین آنها می آموزد که با کشف علاقمندی کودکان، صرفه جویی در زمان و هزینه ، روی توانمند و علاقمندی ایشان سرمایه گذاری خواهید نمود."
+                                children: "«زانیار» پیر دانای هوشمند چت بات اختصاصی مشاوره ی هوشمند، دستیار همیشگی والدینی  که در جستجوی علاقمندی و توانمندی فرزندشان هستند."
                             }, void 0, false, {
                                 fileName: "[project]/src/components/landing/sections/ChatBotSection.tsx",
                                 lineNumber: 39,
@@ -605,7 +605,7 @@ function ChatBotSection() {
                                 children: "رفتن به بات"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/landing/sections/ChatBotSection.tsx",
-                                lineNumber: 44,
+                                lineNumber: 45,
                                 columnNumber: 11
                             }, this)
                         ]
@@ -642,7 +642,7 @@ function ChatBotSection() {
                         className: "w-[200px] md:w-[250px] h-auto"
                     }, void 0, false, {
                         fileName: "[project]/src/components/landing/sections/ChatBotSection.tsx",
-                        lineNumber: 47,
+                        lineNumber: 48,
                         columnNumber: 9
                     }, this)
                 ]
@@ -726,8 +726,8 @@ function CompanySection() {
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                className: "text-lg text-justify max-w-[400px] md:max-w-[500px] text-outline-md",
-                                children: "سرزمین نخستین زیست بوم تخصصی اوقات و فراغت کودکان و نوجوانان ایران زمین است. شخصیت های جهان داستان آوانیان روایت جدیدی از روش های سازماندهی و برنامه ریزی خانواده ایرانی در زمان فراغتشان را بیان می کنند."
+                                className: "text-lg text-justify max-w-[300px] md:max-w-[465px] text-outline-md",
+                                children: "سامانه مدیریت و برنامه ریزی اوقات فراغت کودک و نوجوان محلی برای دسترسی والدین به ابزارهای هوشمند مدیریت زمان."
                             }, void 0, false, {
                                 fileName: "[project]/src/components/landing/sections/CompanySection.tsx",
                                 lineNumber: 33,
@@ -901,7 +901,7 @@ function LoginSection() {
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                             className: "max-w-[400px] md:max-w-[500px] text-justify text-lg text-outline-md",
-                            children: "استفاده از خدمات و محصولات اوقات فراغت «سرزمین آوانیان» به صورت حضوری و غیرحضوری برای افرادی که به عضویت باشگاه آن درآمده باشند، می‌تواند منافع و مزایای خاصی ایجاد کند."
+                            children: "ثبت نام و عضویت در «سرزمین آوانیان» دسترسی به بهترین خدمات و محصولات تخصصی اوقات فراغت کودک و نوجوان ."
                         }, void 0, false, {
                             fileName: "[project]/src/components/landing/sections/LoginSection.tsx",
                             lineNumber: 54,
@@ -915,7 +915,7 @@ function LoginSection() {
                                     children: "رفتن به ثبت نام"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/landing/sections/LoginSection.tsx",
-                                    lineNumber: 61,
+                                    lineNumber: 62,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$landing$2f$sections$2f$SectionButton$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
@@ -923,13 +923,13 @@ function LoginSection() {
                                     children: "رفتن به ورود"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/landing/sections/LoginSection.tsx",
-                                    lineNumber: 62,
+                                    lineNumber: 63,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/landing/sections/LoginSection.tsx",
-                            lineNumber: 60,
+                            lineNumber: 61,
                             columnNumber: 11
                         }, this)
                     ]
@@ -1101,7 +1101,7 @@ function ShopSection() {
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                 className: "max-w-[400px] md:max-w-[500px] text-justify text-lg text-outline-md",
-                                children: "«فروشگاه آوانیان»، به عنوان نخستین فروشگاه اینترنتی و Market Place تخصصی حوزه اوقات فراغت کودک و نوجوان فعالیت خود را از بهار ۱۴۰۱ به نام «شبکه اوقات فراغت» آغاز نموده است."
+                                children: "فروشگاه تخصصی اوقات فراغت نخستین فروشگاه تخصصی محصولات و خدمات اوقات فراغت کودک و نوجوان."
                             }, void 0, false, {
                                 fileName: "[project]/src/components/landing/sections/ShopSection.tsx",
                                 lineNumber: 51,

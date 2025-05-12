@@ -30,11 +30,11 @@ export default function CompanySection() {
           <h1 className="text-4xl md:text-5xl font-bold pb-4 text-outline-lg">
             سرزمین آوانیان
           </h1>
-          <p className="text-lg text-justify max-w-[400px] md:max-w-[500px] text-outline-md">
-            سرزمین نخستین زیست بوم تخصصی اوقات و فراغت کودکان و نوجوانان ایران
-            زمین است. شخصیت های جهان داستان آوانیان روایت جدیدی از روش های
-            سازماندهی و برنامه ریزی خانواده ایرانی در زمان فراغتشان را بیان می
-            کنند.
+          <p className="text-lg text-justify max-w-[300px] md:max-w-[465px] text-outline-md">
+            سامانه مدیریت و برنامه ریزی
+            اوقات فراغت کودک و نوجوان
+            محلی برای دسترسی والدین به
+            ابزارهای هوشمند مدیریت زمان.
           </p>
         </motion.div>
 
