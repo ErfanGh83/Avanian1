@@ -11,4 +11,8 @@ export const data = [
         src: "/images/slide-image3.jpg",
         title: "img3"
     },
+    {
+        src: "/images/slide-image4.jpg",
+        title: "img3"
+    },
 ]

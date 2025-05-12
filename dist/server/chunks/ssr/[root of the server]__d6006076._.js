@@ -262,7 +262,7 @@ __turbopack_context__.s({
     "API_ENDPOINTS": (()=>API_ENDPOINTS),
     "BASE_URL": (()=>BASE_URL)
 });
-const BASE_URL = "http://shahriar.thetechverse.ir/";
+const BASE_URL = "http://shahriar.thetechverse.ir";
 const API_ENDPOINTS = {
     USERS: "/users/",
     REQUEST_OTP: "/request-otp/",
@@ -706,6 +706,10 @@ const data = [
     },
     {
         src: "/images/slide-image3.jpg",
+        title: "img3"
+    },
+    {
+        src: "/images/slide-image4.jpg",
         title: "img3"
     }
 ];
