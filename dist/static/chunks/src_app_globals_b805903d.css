@@ -1138,8 +1138,8 @@ img, video {
   text-align: justify;
 }
 
-.font-vazirmatn {
-  font-family: Vazirmatn;
+.font-bkkt {
+  font-family: Bkkt;
 }
 
 .text-2xl {
@@ -1351,6 +1351,62 @@ img, video {
   font-display: swap;
 }
 
+@font-face {
+  font-family: Bkkt;
+  src: url("/fonts/bkkt/BonyadeKoodakKoochakNoEn-Thin.woff") format("woff");
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Bkkt;
+  src: url("/fonts/bkkt/BonyadeKoodakKoochakNoEn-ExtraLight.woff") format("woff");
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Bkkt;
+  src: url("/fonts/bkkt/BonyadeKoodakKoochakNoEn-Light.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Bkkt;
+  src: url("/fonts/bkkt/BonyadeKoodakKoochakNoEn-Medium.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Bkkt;
+  src: url("/fonts/bkkt/BonyadeKoodakKoochakNoEn-SemiBold.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Bkkt;
+  src: url("/fonts/bkkt/BonyadeKoodakKoochakNoEn-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Bkkt;
+  src: url("/fonts/bkkt/BonyadeKoodakKoochakNoEn-Black.woff") format("woff");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
 .placeholder\:text-gray-500::-moz-placeholder {
   --tw-text-opacity: 1;
   color: rgb(107 114 128 / var(--tw-text-opacity, 1));
@@ -1525,14 +1581,6 @@ img, video {
     display: block;
   }
 
-  .md\:h-full {
-    height: 100%;
-  }
-
-  .md\:w-1\/2 {
-    width: 50%;
-  }
-
   .md\:w-28 {
     width: 7rem;
   }
@@ -1703,16 +1751,8 @@ img, video {
     width: 800px;
   }
 
-  .xl\:max-w-\[1420px\] {
-    max-width: 1420px;
-  }
-
   .xl\:max-w-\[1500px\] {
     max-width: 1500px;
-  }
-
-  .xl\:rounded-3xl {
-    border-radius: 1.5rem;
   }
 
   .xl\:shadow-2xl {

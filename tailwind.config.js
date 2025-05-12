@@ -8,6 +8,7 @@ module.exports = {
     extend: {
       fontFamily: {
         vazirmatn: ["Vazirmatn"],
+        bkkt: ['Bkkt'],
       },
       colors: {
         landing_bg1: "#96D5D2",

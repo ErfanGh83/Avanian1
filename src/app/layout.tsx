@@ -4,13 +4,13 @@ import "./globals.css";
 export const metadata = {
   title: "Avanian",
   description: "Best app for awesome parents",
-  keywords: ["Next.js", "Vazirmatn", "Tailwind"],
+  keywords: ["Next.js", "Vazirmatn", "Tailwind", "Bkkt"],
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html dir="rtl" lang="fa" suppressHydrationWarning>
-      <body className="w-screen h-screen font-vazirmatn overflow-x-hidden overflow-y-auto">
+      <body className="w-screen h-screen font-bkkt overflow-x-hidden overflow-y-auto">
         <ThemeProviders>{children}</ThemeProviders>
       </body>
     </html>
