@@ -49,13 +49,10 @@ export default function LoginSection() {
           className="flex flex-col items-start text-right"
         >
           <h3 className="text-4xl font-bold mb-2 text-outline-lg">
-            به خانواده آوانیان بپیوندید!
+            ثبت نام و عضویت در «سرزمین آوانیان»
           </h3>
           <p className="max-w-[400px] md:max-w-[500px] text-justify text-lg text-outline-md">
-            ثبت نام و عضویت در «سرزمین آوانیان»
-            دسترسی به بهترین خدمات و محصولات
-            تخصصی اوقات فراغت کودک و نوجوان
-            .
+            دسترسی به بهترین خدمات و محصولات تخصصی اوقات فراغت کودک و نوجوان
           </p>
 
           <div className="flex flex-row gap-3 md:gap-6">

@@ -34,13 +34,11 @@ export default function ChatBotSection() {
           className="flex flex-col items-start text-right"
         >
           <h3 className="text-4xl font-bold mb-2 text-outline-lg">
-            چت بات هوشمند آوانیان
+            «زانیار» پیر دانای هوشمند
           </h3>
           <p className="text-lg text-justify max-w-[400px] md:max-w-[500px] text-outline-md">
-            «زانیار» پیر دانای هوشمند
-            چت بات اختصاصی مشاوره ی هوشمند،
-            دستیار همیشگی والدینی  که در جستجوی
-            علاقمندی و توانمندی فرزندشان هستند.
+            چت بات اختصاصی مشاوره ی هوشمند، دستیار همیشگی والدینی که در جستجوی
+            علاقمندی و توانمندی فرزندشان هستند
           </p>
           <SectionButton href="/chat">چت بات</SectionButton>
         </motion.div>

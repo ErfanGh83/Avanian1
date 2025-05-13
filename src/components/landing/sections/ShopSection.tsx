@@ -46,12 +46,11 @@ export default function ShopSection() {
           className="flex flex-col items-start text-right"
         >
           <h3 className="text-4xl font-bold mb-2 text-outline-lg">
-            رفتن به فروشگاه آوانیان
+            فروشگاه تخصصی اوقات فراغت
           </h3>
           <p className="max-w-[400px] md:max-w-[500px] text-justify text-lg text-outline-md">
-            فروشگاه تخصصی اوقات فراغت
-            نخستین فروشگاه تخصصی محصولات
-            و خدمات اوقات فراغت کودک و نوجوان.
+            نخستین فروشگاه تخصصی محصولات و خدمات اوقات فراغت کودک و نوجوان در
+            سراسر کشور از سال ۱۴۰۱
           </p>
 
           <SectionButton href="/shop">فروشگاه</SectionButton>

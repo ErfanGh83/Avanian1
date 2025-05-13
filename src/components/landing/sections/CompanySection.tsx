@@ -13,47 +13,46 @@ export default function CompanySection() {
 
       <motion.section
         // ref={ref}
-        className="relative bg-landing_bg1 dark:bg-dark1 flex flex-col-reverse md:flex-row items-center justify-around gap-8 mt-44 mb-0 pb-10 px-6 md:px-16"
+        className="relative bg-landing_bg1 dark:bg-dark1 mt-44 mb-0 pb-10 px-6 md:px-20"
       >
-        <div className="absolute bottom-[-10] z-[-2] bg-landing_bg1 dark:bg-dark1 w-full h-[100px] " />
-        <motion.div
-          variants={{
-            hidden: { opacity: 0, x: 50 },
-            visible: { opacity: 1, x: 0 },
-          }}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          transition={{ duration: 1.2, ease: "easeOut" }}
-          className="flex flex-col items-start text-right"
-        >
-          <h1 className="text-4xl md:text-5xl font-bold pb-4 text-outline-lg">
-            سرزمین آوانیان
-          </h1>
-          <p className="text-lg text-justify max-w-[300px] md:max-w-[465px] text-outline-md">
-            سامانه مدیریت و برنامه ریزی
-            اوقات فراغت کودک و نوجوان
-            محلی برای دسترسی والدین به
-            ابزارهای هوشمند مدیریت زمان.
-          </p>
-        </motion.div>
+        <div className="mx-auto max-w-[1000px] flex flex-col-reverse md:flex-row items-center justify-around gap-4 ">
+          <div className="absolute bottom-[-10] z-[-2] bg-landing_bg1 dark:bg-dark1 w-full h-[100px] " />
+          <motion.div
+            variants={{
+              hidden: { opacity: 0, x: 50 },
+              visible: { opacity: 1, x: 0 },
+            }}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            transition={{ duration: 1.2, ease: "easeOut" }}
+            className="flex flex-col items-start text-right"
+          >
+            <h1 className="text-4xl md:text-5xl max-w-[400px] md:max-w-[700px] font-bold pb-4 text-outline-lg">
+              سامانه مدیریت و برنامه ریزی اوقات فراغت کودک و نوجوان
+            </h1>
+            <p className="text-lg text-justify max-w-[300px] md:max-w-[465px] text-outline-md">
+              محلی برای دسترسی والدین به ابزارهای هوشمند مدیریت زمان
+            </p>
+          </motion.div>
 
-        <motion.img
-          src="/vectors/logo.svg"
-          alt="سرزمین آوانیان"
-          width={250}
-          viewport={{ once: true }}
-          height={250}
-          loading="lazy"
-          variants={{
-            hidden: { opacity: 0, x: -50 },
-            visible: { opacity: 1, x: 0 },
-          }}
-          initial="hidden"
-          whileInView="visible"
-          transition={{ duration: 1.2, ease: "easeOut" }}
-          className="w-[200px] md:w-[250px] h-auto"
-        />
+          <motion.img
+            src="/vectors/logo.svg"
+            alt="سرزمین آوانیان"
+            width={250}
+            viewport={{ once: true }}
+            height={250}
+            loading="lazy"
+            variants={{
+              hidden: { opacity: 0, x: -50 },
+              visible: { opacity: 1, x: 0 },
+            }}
+            initial="hidden"
+            whileInView="visible"
+            transition={{ duration: 1.2, ease: "easeOut" }}
+            className="w-[200px] md:w-[250px] h-auto"
+          />
+        </div>
       </motion.section>
 
       <svg
