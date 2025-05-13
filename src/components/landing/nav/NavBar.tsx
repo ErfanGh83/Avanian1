@@ -2,7 +2,7 @@
 
 // import ThemeSwitchButton from "@/components/buttons/ThemeSwitcher/ThemeSwitchButton";
 import React, { ReactNode, useState } from "react";
-import { FaHome, FaUser } from "react-icons/fa";
+import { FaHome, FaUser, FaInfoCircle, FaUserTie } from "react-icons/fa";
 import { FaMessage, FaShop } from "react-icons/fa6";
 import { motion } from "framer-motion";
 import Image from "next/image";
@@ -17,16 +17,16 @@ export default function NavBar() {
   return (
     <>
       <NavSVG />
-      <nav className="w-full flex flex-row h-20 justify-between items-center px-1 md:px-6 gap-2">
+      <nav className="w-full flex flex-row h-20 justify-between items-center px-1 md:px-6 gap-1">
         <Image
           src="/images/logo.png"
           alt="Avanian"
           width={200}
           height={200}
-          className="w-28 z-10"
+          className="md:w-28 w-14 z-10"
         />
 
-        <div className="flex flex-row gap-3 md:gap-3 lg:gap-8 text-base items-center">
+        <div className="flex flex-row gap-2 md:gap-3 lg:gap-8 text-base items-center">
           {buttons.map((item) => {
             const isActive = pathname === item.link;
             return (
@@ -72,7 +72,7 @@ export default function NavBar() {
           })}
         </div>
 
-        <div className="w-4 sm:w-16">{/* <ThemeSwitchButton /> */}</div>
+        <div className="block lg:w-28">{/* <ThemeSwitchButton /> */}</div>
       </nav>
     </>
   );
@@ -85,6 +85,8 @@ const buttons: {
 }[] = [
   { icon: <FaHome />, text: "صفحه اصلی", link: "/" },
   { icon: <FaShop />, text: "فروشگاه", link: "/shop" },
-  { icon: <FaMessage />, text: "چت بات", link: "/chat" },
+  { icon: <FaMessage />, text: "بات", link: "/chat" },
+  { icon: <FaInfoCircle />, text: "درباره ما", link: "/about-us" },
+  { icon: <FaUserTie />, text: "مشاوران", link: "/download" },
   { icon: <FaUser />, text: "ورود", link: "/login" },
 ];
