@@ -37,7 +37,7 @@ const buttonList: {
   href: string;
   bgColor: string;
 }[] = [
-  { text: "ثبت نام", bgColor: "bg-landing_bg1", href: "#login" },
   { text: "چت بات", bgColor: "bg-landing_bg3", href: "#chat" },
+  { text: "ثبت نام", bgColor: "bg-landing_bg1", href: "#login" },
   { text: "فروشگاه", bgColor: "bg-landing_bg4", href: "#shop" },
 ];

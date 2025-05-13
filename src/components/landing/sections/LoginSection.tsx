@@ -59,8 +59,8 @@ export default function LoginSection() {
           </p>
 
           <div className="flex flex-row gap-3 md:gap-6">
-            <SectionButton href="/sign-up">رفتن به ثبت نام</SectionButton>
-            <SectionButton href="/login">رفتن به ورود</SectionButton>
+            <SectionButton href="/sign-up">ثبت نام</SectionButton>
+            <SectionButton href="/login">ورود</SectionButton>
           </div>
         </motion.div>
       </div>

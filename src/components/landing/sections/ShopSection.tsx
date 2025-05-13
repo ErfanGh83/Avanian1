@@ -54,7 +54,7 @@ export default function ShopSection() {
             و خدمات اوقات فراغت کودک و نوجوان.
           </p>
 
-          <SectionButton href="/shop">رفتن به فروشگاه</SectionButton>
+          <SectionButton href="/shop">فروشگاه</SectionButton>
         </motion.div>
       </div>
     </motion.div>

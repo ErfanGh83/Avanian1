@@ -42,7 +42,7 @@ export default function ChatBotSection() {
             دستیار همیشگی والدینی  که در جستجوی
             علاقمندی و توانمندی فرزندشان هستند.
           </p>
-          <SectionButton href="/chat">رفتن به بات</SectionButton>
+          <SectionButton href="/chat">چت بات</SectionButton>
         </motion.div>
 
         <motion.img
