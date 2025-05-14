@@ -11,20 +11,32 @@ module.exports = {
         bkkt: ['Bkkt'],
       },
       colors: {
-        landing_bg1: "#96D5D2",
-        landing_bg2: "#F2FFFF",
-        landing_bg3: "#FAA61A",
-        landing_bg4: "#FECF8D",
-        lightGreen: "#a2c837",
-        lightBlue: "#00C0F3",
-        darkBlue: "#00234F",
-        turquoise: "#42b9a2",
-        avanianBlue: "#32BCAD",
-        avanianGreen: "#A6CE39",
-        dark1: "#007B78",
-        dark2: "#45196F",
-        dark3: "#00A651",
-        dark4: "#d48812",
+        // Improved landing backgrounds with better contrast
+        landing_bg1: "#6EC4C1",  // Darker teal for better contrast
+        landing_bg2: "#E0F7FA",  // Softer light blue-white
+        landing_bg3: "#E69500",   // More vibrant orange
+        landing_bg4: "#FDBF5E",  // Warmer peach
+
+        // Enhanced primary colors
+        lightGreen: "#8BB82D",   // More saturated
+        lightBlue: "#00A8E0",    // Slightly deeper
+        darkBlue: "#001A3A",     // Richer navy
+        turquoise: "#2FA98E",    // More sophisticated
+
+        // Refined brand colors
+        avanianBlue: "#28A99A",  // Slightly deeper
+        avanianGreen: "#91C22B",  // More vibrant
+
+        // Improved dark variants
+        dark1: "#00615E",        // Better contrast
+        dark2: "#3A125F",        // Slightly desaturated purple
+        dark3: "#008A47",        // More natural green
+        dark4: "#C47A10",        // Richer gold
+
+        // New additions for better design system
+        accent: "#FF6B35",       // Complementary orange
+        lightGray: "#F5F7FA",    // Useful background
+        darkGray: "#2D3748"      // For secondary text
       },
       screens: {
         'short': { 'raw': '(min-height: 700px)' },
