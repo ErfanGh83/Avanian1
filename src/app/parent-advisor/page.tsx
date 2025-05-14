@@ -35,7 +35,7 @@ function page() {
 
                             {pdfData.map((item, index) => (
                                 <a
-                                    download
+                                    download={`${item.title}.pdf`}
                                     key={index}
                                     href={item.link}
                                     rel="noopener noreferrer"
@@ -68,4 +68,3 @@ function page() {
 }
 
 export default page;
-
