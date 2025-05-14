@@ -1,14 +1,18 @@
 import React, { Dispatch, ReactNode, SetStateAction, useEffect, useState } from 'react'
 import Link from 'next/link'
-import { FaHome, FaInfoCircle, FaUser, FaUserTie, FaTimes } from 'react-icons/fa'
-import { FaMessage, FaShop } from 'react-icons/fa6'
+import { FaTimes } from 'react-icons/fa'
 
 type Props = {
     isOpen: boolean;
     setIsOpen: Dispatch<SetStateAction<boolean>>;
+    buttons: {
+      icon: ReactNode;
+      text: string;
+      link: string;
+    }[]
 };
 
-const HamburgerMenu = ({ isOpen, setIsOpen }: Props) => {
+const HamburgerMenu = ({ isOpen, setIsOpen, buttons }: Props) => {
     const [visible, setVisible] = useState(false);
     const [animateClass, setAnimateClass] = useState('translate-x-full');
 
@@ -25,19 +29,6 @@ const HamburgerMenu = ({ isOpen, setIsOpen }: Props) => {
             return () => clearTimeout(timeout);
         }
     }, [isOpen]);
-
-    const buttons: {
-        icon: ReactNode;
-        text: string;
-        link: string;
-    }[] = [
-        { icon: <FaHome />, text: "صفحه اصلی", link: "/" },
-        { icon: <FaShop />, text: "فروشگاه", link: "/shop" },
-        { icon: <FaMessage />, text: "بات", link: "/chat" },
-        { icon: <FaInfoCircle />, text: "درباره ما", link: "/about-us" },
-        { icon: <FaUserTie />, text: "مشاوره والدین", link: "/parent-advisor" },
-        { icon: <FaUser />, text: "ورود", link: "/login" },
-    ];
 
     return (
         <>

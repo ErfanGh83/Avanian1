@@ -36,7 +36,7 @@ export default function NavBar() {
             <GiHamburgerMenu size={36} />
           </button>
 
-          <HamburgerMenu isOpen={isOpen} setIsOpen={setIsOpen} />
+          <HamburgerMenu isOpen={isOpen} setIsOpen={setIsOpen} buttons={buttons} />
         </div>
         
         <div className="hidden md:flex flex-row gap-2 md:gap-3 lg:gap-8 text-base items-center">
