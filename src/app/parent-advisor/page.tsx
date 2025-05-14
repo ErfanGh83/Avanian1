@@ -35,6 +35,7 @@ function page() {
 
                             {pdfData.map((item, index) => (
                                 <a
+                                    download
                                     key={index}
                                     href={item.link}
                                     rel="noopener noreferrer"
