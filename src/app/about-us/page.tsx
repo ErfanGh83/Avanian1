@@ -10,7 +10,7 @@ function page() {
           <NavBar />
         </div>
         <div className="pt-56 md:pt-60 xl:pt-64">
-          <section className="max-w-[1000px] shadow-sm px-4 py-8 rounded-xl bg-gray-50/25 mx-auto">
+          <section className="max-w-[1000px] shadow-sm px-4 py-8 rounded-xl bg-gray-900/40 mx-auto">
             <h2 className="font-bold mb-4 text-3xl text-outline-lg">
               درباره ما
             </h2>
