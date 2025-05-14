@@ -25,7 +25,7 @@ export default function QuickAccessButton({ children, bgColor, href }: Prop) {
           scale: 1.05,
         }}
         whileTap={{ scale: 0.95, y: 5, opacity: 0.9 }}
-        className={`${bgColor} dark:text-black text-white max-w-64 py-6 text-2xl font-bold px-20 rounded-3xl shadow-lg hover:shadow-xl`}
+        className={`${bgColor} dark:text-black text-white max-w-64 py-6 text-2xl font-bold px-20 rounded-3xl shadow-lg hover:shadow-xl text-outline`}
       >
         {children}
       </motion.button>

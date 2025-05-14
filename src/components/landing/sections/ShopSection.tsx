@@ -45,10 +45,10 @@ export default function ShopSection() {
           transition={{ duration: 1, ease: "easeOut" }}
           className="flex flex-col items-start text-right"
         >
-          <h3 className="text-4xl font-bold mb-2 text-outline-lg">
+          <h3 className="text-4xl font-bold mb-2 text-outline">
             فروشگاه تخصصی اوقات فراغت
           </h3>
-          <p className="max-w-[400px] md:max-w-[500px] text-justify text-lg text-outline-md">
+          <p className="max-w-[400px] md:max-w-[500px] text-justify text-lg text-outline">
             نخستین فروشگاه تخصصی محصولات و خدمات اوقات فراغت کودک و نوجوان در
             سراسر کشور از سال ۱۴۰۱
           </p>
