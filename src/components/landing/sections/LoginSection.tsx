@@ -20,22 +20,44 @@ export default function LoginSection() {
         <div className="absolute bg-landing_bg4 dark:bg-dark4 top-[-200px] left-0 right-0 w-full h-[300px] z-[-4]" />
         <div className="absolute bg-landing_bg4 dark:bg-dark4 bottom-[-80px] left-0 right-0 w-full h-[150px] z-[-4]" />
 
-        <motion.img
-          src="/vectors/book.svg"
-          alt="ثبت نام"
-          width={250}
-          height={250}
-          viewport={{ once: true }}
-          loading="lazy"
-          variants={{
-            hidden: { opacity: 0, x: 50 },
-            visible: { opacity: 1, x: 0 },
-          }}
-          initial="hidden"
-          whileInView="visible"
-          transition={{ duration: 1, ease: "easeOut" }}
-          className="w-[200px] md:w-[250px] h-auto"
-        />
+        <div
+          className="size-64 relative"
+        >
+          <motion.img
+            src="/vectors/book.svg"
+            alt="ثبت نام"
+            width={250}
+            height={250}
+            viewport={{ once: true }}
+            loading="lazy"
+            variants={{
+              hidden: { opacity: 0, x: 50 },
+              visible: { opacity: 1, x: 0 },
+            }}
+            initial="hidden"
+            whileInView="visible"
+            transition={{ duration: 1, ease: "easeOut" }}
+            className="w-[200px] md:w-[250px] h-auto absolute z-20 top-0 left-0"
+          />
+
+          <motion.img
+            src="/vectors/cloud.svg"
+            alt="ثبت نام"
+            width={350}
+            height={500}
+            viewport={{ once: true }}
+            loading="lazy"
+            variants={{
+              hidden: { opacity: 0, x: 50 },
+              visible: { opacity: 1, x: 0 },
+            }}
+            initial="hidden"
+            whileInView="visible"
+            transition={{ duration: 1, ease: "easeOut" }}
+            className="w-[200px] md:w-[250px] h-auto absolute z-10 top-[20%] xl:top-[27%] left-0"
+          />
+        </div>
+
 
         <motion.div
           variants={{
