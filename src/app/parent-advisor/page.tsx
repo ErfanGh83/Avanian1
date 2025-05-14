@@ -24,7 +24,7 @@ function page() {
                 <div className="pt-56 md:pt-60 xl:pt-64">
                     <section className="max-w-[1000px] shadow-sm px-4 py-8 rounded-xl bg-gray-900/40 backdrop-blur-md mx-auto">
                         <h2 className="font-bold mb-4 text-3xl text-white">
-                            مشاور والدین
+                            مشاوره والدین
                         </h2>
                         <h4 className="text-xl text-justify text-gray-100 mb-6 leading-relaxed">
                             اوقات فراغت، فرصتی طلایی برای رشد مهارت‌ها، خلاقیت و شادی فرزندان شماست. برنامه‌ریزی مناسب بر اساس سن کودک، به تقویت هوش هیجانی، مهارت‌های اجتماعی و استعدادهای فردی کمک می‌کند. مشاوره تخصصی، مسیر درست را به شما نشان می‌دهد تا بهترین بهره را از این زمان ببرید.
@@ -40,7 +40,7 @@ function page() {
                                     rel="noopener noreferrer"
                                     target="_blank"
                                     className={`
-                                        w-[300px] sm:w-[350px] md:w-[430px] h-[200px] flex flex-row items-center pl-6 pr-4 
+                                        w-[300px] sm:w-[350px] md:w-[430px] h-[150px] md:h-[200px] flex flex-row items-center pl-6 pr-4 
                                         rounded-full hover:scale-105 transition-all
                                         ${themeClassMap[item.theme] || 'bg-gray-500'}
                                     `}
