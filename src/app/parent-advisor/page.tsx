@@ -28,14 +28,14 @@ function page() {
                             {pdfData.map((item, index) => (
                                 <div
                                     key={index}
-                                    className="bg-blue-50/40 text-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow backdrop-blur-md"
+                                    className="bg-blue-200 text-slate-800 p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow backdrop-blur-md"
                                 >
                                     <div className="flex items-center justify-between mb-2">
                                         <h3 className="text-xl font-semibold">{item.title}</h3>
                                         <FaFilePdf className="text-red-500" size={32} />
                                     </div>
 
-                                    <p className="mb-4 text-sm text-gray-200">{item.description}</p>
+                                    <p className="mb-4 text-sm text-gray-700">{item.description}</p>
                                     <a
                                         href={item.link}
                                         target="_blank"
