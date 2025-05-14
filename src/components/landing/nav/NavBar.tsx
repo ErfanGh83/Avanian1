@@ -87,6 +87,6 @@ const buttons: {
   { icon: <FaShop />, text: "فروشگاه", link: "/shop" },
   { icon: <FaMessage />, text: "بات", link: "/chat" },
   { icon: <FaInfoCircle />, text: "درباره ما", link: "/about-us" },
-  { icon: <FaUserTie />, text: "مشاوران", link: "/download" },
+  { icon: <FaUserTie />, text: "مشاوره والدین", link: "/parent-advisor" },
   { icon: <FaUser />, text: "ورود", link: "/login" },
 ];
