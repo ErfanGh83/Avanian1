@@ -31,7 +31,7 @@ function page() {
                                     className="bg-blue-200 text-slate-800 p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow backdrop-blur-md"
                                 >
                                     <div className="flex items-center justify-between mb-2">
-                                        <h3 className="text-xl font-semibold">{item.title}</h3>
+                                        <h3 className="size-fit px-1 bg-green-200 rounded-sm text-xl font-semibold border-2 border-green-400">{item.title}</h3>
                                         <FaFilePdf className="text-red-500" size={32} />
                                     </div>
 
