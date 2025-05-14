@@ -2,7 +2,7 @@ import Footer from "@/components/landing/Footer";
 import NavBar from "@/components/landing/nav/NavBar";
 import React from "react";
 import { data } from "./data";
-import { FaDownload, FaFilePdf } from "react-icons/fa";
+import Image from "next/image";
 
 function page() {
     const pdfData = data;
@@ -26,26 +26,30 @@ function page() {
 
                         <div className="grid gap-6 md:grid-cols-2">
                             {pdfData.map((item, index) => (
-                                <div
+                                <a
                                     key={index}
-                                    className="bg-blue-200 text-slate-800 p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow backdrop-blur-md"
+                                    href={item.link}
+                                    rel="noopener noreferrer"
+                                    target="_blank"
+                                    className={`w-[400px] h-[200px] flex flex-row items-center pl-6 pr-4 bg-blue-400 rounded-full hover:cursor-pointer hover:scale-105 transition-all`}
                                 >
-                                    <div className="flex items-center justify-between mb-2">
-                                        <h3 className="size-fit px-1 bg-green-200 rounded-sm text-xl font-semibold border-2 border-green-400">{item.title}</h3>
-                                        <FaFilePdf className="text-red-500" size={32} />
+                                    <div
+                                        className="w-1/2 h-full flex justify-center items-center"
+                                    >
+                                        <h2 className="text-6xl font-bold">{item.title}</h2>
                                     </div>
 
-                                    <p className="mb-4 text-sm text-gray-700">{item.description}</p>
-                                    <a
-                                        href={item.link}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="flex items-center justify-between bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition-colors"
+                                    <div
+                                        className="w-1/2 h-full relative"
                                     >
-                                        دریافت فایل
-                                        <FaDownload className="ml-2" />
-                                    </a>
-                                </div>
+                                        <div
+                                            className="size-56 absolute bottom-[8%] z-20"
+                                        >
+                                            <Image src={item.imageSrc} alt={`pdf-image-${item.title}`} fill />
+                                        </div>
+
+                                    </div>
+                                </a>
                             ))}
                         </div>
                     </section>
