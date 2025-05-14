@@ -31,7 +31,7 @@ function page() {
                             با دریافت فایل راهنمای مرتبط، بهترین برنامه را برای فرزندتان طراحی کنید.
                         </h4>
 
-                        <div className="grid gap-6 gap-y-16 md:grid-cols-2 justify-items-center mt-24">
+                        <div className="grid gap-6 gap-y-16 lg:grid-cols-2 justify-items-center mt-24">
 
                             {pdfData.map((item, index) => (
                                 <a
@@ -40,17 +40,17 @@ function page() {
                                     rel="noopener noreferrer"
                                     target="_blank"
                                     className={`
-                                        w-full max-w-[400px] h-[200px] flex flex-row items-center pl-6 pr-4 
+                                        w-[300px] sm:w-[350px] md:w-[430px] h-[200px] flex flex-row items-center pl-6 pr-4 
                                         rounded-full hover:scale-105 transition-all
                                         ${themeClassMap[item.theme] || 'bg-gray-500'}
                                     `}
                                 >
                                     <div className="w-1/2 h-full flex justify-center items-center">
-                                        <h2 className="text-6xl font-bold text-white">{item.title}</h2>
+                                        <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white">{item.title}</h2>
                                     </div>
 
                                     <div className="w-1/2 h-full relative">
-                                        <div className="size-56 absolute bottom-[8%] z-20">
+                                        <div className="size-48 md:size-56 absolute bottom-[8%] z-20">
                                             <Image src={item.imageSrc} alt={`pdf-image-${item.title}`} fill />
                                         </div>
                                     </div>
