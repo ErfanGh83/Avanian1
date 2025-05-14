@@ -84,7 +84,7 @@ export default function NavBar() {
           })}
         </div>
 
-        <div className="hidden md:block">{/* <ThemeSwitchButton /> */}</div>
+        <div className="hidden md:block md:w-28">{/* <ThemeSwitchButton /> */}</div>
       </nav>
     </>
   );
