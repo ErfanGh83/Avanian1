@@ -7,6 +7,13 @@ import Image from "next/image";
 function page() {
     const pdfData = data;
 
+    const themeClassMap: { [key: string]: string } = {
+        purple: "bg-purple-500 hover:bg-purple-600",
+        blue: "bg-blue-500 hover:bg-blue-600",
+        green: "bg-green-500 hover:bg-green-600",
+        red: "bg-red-500 hover:bg-red-600",
+    };
+
     return (
         <>
             <div className="text-white bg-landing_bg1 pb-8 px-4 w-full min-h-full overflow-x-hidden">
@@ -24,33 +31,32 @@ function page() {
                             با دریافت فایل راهنمای مرتبط، بهترین برنامه را برای فرزندتان طراحی کنید.
                         </h4>
 
-                        <div className="grid gap-6 md:grid-cols-2">
+                        <div className="grid gap-6 gap-y-16 md:grid-cols-2 justify-items-center mt-24">
+
                             {pdfData.map((item, index) => (
                                 <a
                                     key={index}
                                     href={item.link}
                                     rel="noopener noreferrer"
                                     target="_blank"
-                                    className={`w-[400px] h-[200px] flex flex-row items-center pl-6 pr-4 bg-blue-400 rounded-full hover:cursor-pointer hover:scale-105 transition-all`}
+                                    className={`
+                                        w-full max-w-[400px] h-[200px] flex flex-row items-center pl-6 pr-4 
+                                        rounded-full hover:scale-105 transition-all
+                                        ${themeClassMap[item.theme] || 'bg-gray-500'}
+                                    `}
                                 >
-                                    <div
-                                        className="w-1/2 h-full flex justify-center items-center"
-                                    >
-                                        <h2 className="text-6xl font-bold">{item.title}</h2>
+                                    <div className="w-1/2 h-full flex justify-center items-center">
+                                        <h2 className="text-6xl font-bold text-white">{item.title}</h2>
                                     </div>
 
-                                    <div
-                                        className="w-1/2 h-full relative"
-                                    >
-                                        <div
-                                            className="size-56 absolute bottom-[8%] z-20"
-                                        >
+                                    <div className="w-1/2 h-full relative">
+                                        <div className="size-56 absolute bottom-[8%] z-20">
                                             <Image src={item.imageSrc} alt={`pdf-image-${item.title}`} fill />
                                         </div>
-
                                     </div>
                                 </a>
                             ))}
+
                         </div>
                     </section>
                 </div>
