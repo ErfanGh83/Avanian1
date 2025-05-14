@@ -28,7 +28,7 @@ export default function CompanySection() {
             transition={{ duration: 1.2, ease: "easeOut" }}
             className="flex flex-col items-start text-right"
           >
-            <h1 className="text-4xl md:text-5xl max-w-[400px] md:max-w-[700px] font-bold pb-4 text-outline-lg">
+            <h1 className="text-3xl md:text-4xl max-w-[400px] md:max-w-[500px] font-bold pb-4 text-outline-lg">
               سامانه مدیریت و برنامه ریزی اوقات فراغت کودک و نوجوان
             </h1>
             <p className="text-lg text-justify max-w-[300px] md:max-w-[465px] text-outline-md">
