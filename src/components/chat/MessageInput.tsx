@@ -2,12 +2,10 @@
 
 import React, { useRef, useState } from "react";
 import { FaArrowUp } from "react-icons/fa";
-import axios, { AxiosError } from "axios";
-import { getAuthToken, getSessionId } from "@/utils/storage";
-import { API_ENDPOINTS, BASE_URL } from "@/lib/api/constants";
 import { Message } from "@/schema/chatDataSchema";
 import { toast } from "react-toastify";
 import { motion } from "framer-motion";
+import { sendMessage } from "@/lib/api/chat";
 
 export default function MessageInput({
   setMessages,
@@ -28,98 +26,54 @@ export default function MessageInput({
       textareaRef.current.value = "";
     }
 
-    const token = getAuthToken();
-    const sessionId = getSessionId();
-    if (!sessionId || !token) {
-      toast.error("لطفا ابتدا وارد شوید ", {
-        autoClose: 1500,
-        position: "bottom-left",
-      });
-      setLoading(false);
-      return;
-    }
-
-    setMessages((prev) => {
-      if (!prev)
-        return [
-          {
-            content: text,
-            role: "human",
-            timeStamp: new Date().toDateString(),
-          },
-        ];
-      else
-        return [
-          ...prev,
-          {
-            content: text,
-            role: "human",
-            timeStamp: new Date().toDateString(),
-          },
-        ];
-    });
+    setMessages((prev) => [
+      ...(prev ?? []),
+      {
+        content: text,
+        role: "human",
+        timeStamp: new Date().toDateString(),
+      },
+    ]);
 
     try {
       setLoading(true);
 
-      const response = await axios.post(
-        `${BASE_URL}${API_ENDPOINTS.SEND_MESSAGE}${sessionId}/message`,
-        { message: text },
-        {
-          headers: {
-            Authorization: `Bearer ${token}`,
-            "Content-Type": "application/json",
-          },
-        }
-      );
+      const aiResponse = await sendMessage(text);
 
-      setMessages((prev) => {
-        if (!prev)
-          return [
-            {
-              content: response.data.response,
-              role: "ai",
-              timeStamp: new Date().toDateString(),
-            },
-          ];
-        else
-          return [
-            ...prev,
-            {
-              content: response.data.response,
-              role: "ai",
-              timeStamp: new Date().toDateString(),
-            },
-          ];
-      });
+      setMessages((prev) => [
+        ...(prev ?? []),
+        {
+          content: aiResponse,
+          role: "ai",
+          timeStamp: new Date().toDateString(),
+        },
+      ]);
 
       setText("");
-    } catch (err: unknown) {
-      const error = err as AxiosError<{ detail?: string[], message: string }>;
-      const errorMessage = error.response?.data?.message || "خطا در ارسال پیام";
-      setMessages((prev) => {
-        if (!prev)
-          return [
-            {
-              content: errorMessage,
-              role: "ai",
-              timeStamp: new Date().toDateString(),
-            },
-          ];
-        else
-          return [
-            ...prev,
-            {
-              content: errorMessage,
-              role: "ai",
-              timeStamp: new Date().toDateString(),
-            },
-          ];
-      });
-      toast.error(errorMessage, {
-        position: "bottom-left",
-        autoClose: 1500,
-      });
+    } catch (err: any) {
+      if (err.message === "UNAUTHENTICATED") {
+        toast.error("لطفا ابتدا وارد شوید ", {
+          autoClose: 1500,
+          position: "bottom-left",
+        });
+      } else {
+        const errorMessage =
+          err?.response?.data?.message || "خطا در ارسال پیام";
+
+        setMessages((prev) => [
+          ...(prev ?? []),
+          {
+            content: errorMessage,
+            role: "ai",
+            timeStamp: new Date().toDateString(),
+          },
+        ]);
+
+        toast.error(errorMessage, {
+          position: "bottom-left",
+          autoClose: 1500,
+        });
+      }
     } finally {
       setLoading(false);
     }
