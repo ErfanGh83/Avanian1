@@ -6,19 +6,22 @@ import { Message } from "@/schema/chatDataSchema";
 import { toast } from "react-toastify";
 import { motion } from "framer-motion";
 import { sendMessage } from "@/lib/api/chat";
+import { AxiosError } from "axios";
+
+interface MessageInputProps {
+  setMessages: React.Dispatch<React.SetStateAction<Message[] | null>>;
+  messages: Message[] | null;
+}
 
 export default function MessageInput({
   setMessages,
   messages,
-}: {
-  setMessages: React.Dispatch<React.SetStateAction<Message[] | null>>;
-  messages: Message[] | null;
-}) {
-  const [text, setText] = useState("");
-  const [loading, setLoading] = useState(false);
+}: MessageInputProps) {
+  const [text, setText] = useState<string>("");
+  const [loading, setLoading] = useState<boolean>(false);
   const textareaRef = useRef<HTMLTextAreaElement>(null);
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (!text.trim() || loading) return;
 
@@ -38,7 +41,7 @@ export default function MessageInput({
     try {
       setLoading(true);
 
-      const aiResponse = await sendMessage(text);
+      const aiResponse: string = await sendMessage(text);
 
       setMessages((prev) => [
         ...(prev ?? []),
@@ -50,30 +53,42 @@ export default function MessageInput({
       ]);
 
       setText("");
-    } catch (err: any) {
-      if (err.message === "UNAUTHENTICATED") {
-        toast.error("لطفا ابتدا وارد شوید ", {
-          autoClose: 1500,
-          position: "bottom-left",
-        });
-      } else {
-        const errorMessage =
-          err?.response?.data?.message || "خطا در ارسال پیام";
-
-        setMessages((prev) => [
-          ...(prev ?? []),
-          {
-            content: errorMessage,
-            role: "ai",
-            timeStamp: new Date().toDateString(),
-          },
-        ]);
-
-        toast.error(errorMessage, {
-          position: "bottom-left",
-          autoClose: 1500,
-        });
+    } catch (error: unknown) {
+      // Check if error is an object with a message
+      if (
+        typeof error === "object" &&
+        error !== null &&
+        "message" in error &&
+        typeof (error as { message: string }).message === "string"
+      ) {
+        const typedError = error as { message: string };
+        if (typedError.message === "UNAUTHENTICATED") {
+          toast.error("لطفا ابتدا وارد شوید ", {
+            autoClose: 1500,
+            position: "bottom-left",
+          });
+          return;
+        }
       }
+
+      // Handle Axios error
+      const axiosError = error as AxiosError<{ message?: string }>;
+      const errorMessage =
+        axiosError.response?.data?.message ?? "خطا در ارسال پیام";
+
+      setMessages((prev) => [
+        ...(prev ?? []),
+        {
+          content: errorMessage,
+          role: "ai",
+          timeStamp: new Date().toDateString(),
+        },
+      ]);
+
+      toast.error(errorMessage, {
+        position: "bottom-left",
+        autoClose: 1500,
+      });
     } finally {
       setLoading(false);
     }
