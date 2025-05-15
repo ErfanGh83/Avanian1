@@ -53,7 +53,7 @@ export default function ShopSection() {
             سراسر کشور از سال ۱۴۰۱
           </p>
 
-          <SectionButton href="/shop">فروشگاه</SectionButton>
+          <SectionButton href="https://avanian.ir">فروشگاه</SectionButton>
         </motion.div>
       </div>
     </motion.div>
