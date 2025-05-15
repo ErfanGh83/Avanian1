@@ -5,13 +5,12 @@ import React, { useEffect, useState } from "react";
 import ChatBox from "../containers/chat-containers/ChatBox";
 import MessageItem from "./MessageItem";
 import Image from "next/image";
-import { getAuthToken, getSessionId } from "@/utils/storage";
-import axios from "axios";
 import { Message } from "@/schema/chatDataSchema";
 import { toast } from "react-toastify";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import { fetchMessages } from "@/lib/api/chat";
 
 export default function MessageContainer({
   setMessages,
@@ -25,66 +24,52 @@ export default function MessageContainer({
   const router = useRouter();
 
   useEffect(() => {
-    const fetchMessages = async () => {
+    const getMessages = async () => {
       setLoading(true);
-      
-      const token = getAuthToken();
-      const sessionId = getSessionId();
-      
-      if (!sessionId || !token) {
-        setIsAuthenticated(false);
-        toast.error(
-          <div className="flex items-center gap-1">
-            <span>لطفا ابتدا وارد شوید</span>
-            <Link 
-              href="/login" 
-              className="text-white underline hover:text-blue-200 font-medium"
-              onClick={(e) => {
-                e.stopPropagation(); // Prevent toast from closing
-                router.push('/login');
-              }}
-            >
-              اینجا
-            </Link>
-          </div>,
-          {
-            autoClose: 5000,
-            position: "bottom-left",
-            className: '!bg-red-600 !text-white',
-            closeButton: true,
-          }
-        );
-        setLoading(false);
-        return;
-      }
 
-      setIsAuthenticated(true);
-      
       try {
-        const response = await axios.get(
-          `http://188.34.162.79:8789/chat/sessions/${sessionId}/history`,
-          {
-            headers: {
-              Authorization: `Bearer ${token}`,
-              "Session-Id": sessionId,
-            },
-          }
-        );
-
-        setMessages(response.data);
+        const data = await fetchMessages();
+        setIsAuthenticated(true);
+        setMessages(data);
       } catch (err: any) {
-        toast.error(err?.response?.data?.detail || "خطا در دریافت پیام‌ها", {
-          position: "bottom-left",
-          autoClose: 3000,
-          className: '!bg-red-600 !text-white',
-        });
+        if (err.message === "UNAUTHENTICATED") {
+          setIsAuthenticated(false);
+          toast.error(
+            <div className="flex items-center gap-1">
+              <span>لطفا ابتدا وارد شوید</span>
+              <Link
+                href="/login"
+                className="text-white underline hover:text-blue-200 font-medium"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  router.push("/login");
+                }}
+              >
+                اینجا
+              </Link>
+            </div>,
+            {
+              autoClose: 5000,
+              position: "bottom-left",
+              className: "!bg-red-600 !text-white",
+              closeButton: true,
+            }
+          );
+        } else {
+          toast.error(err?.response?.data?.detail || "خطا در دریافت پیام‌ها", {
+            position: "bottom-left",
+            autoClose: 3000,
+            className: "!bg-red-600 !text-white",
+          });
+        }
       } finally {
         setLoading(false);
       }
     };
 
-    fetchMessages();
+    getMessages();
   }, [setMessages, router]);
+  
 
   if (!isAuthenticated) {
     return (
