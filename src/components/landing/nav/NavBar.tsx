@@ -96,7 +96,7 @@ const buttons: {
   link: string;
 }[] = [
   { icon: <FaHome />, text: "صفحه اصلی", link: "/" },
-  { icon: <FaShop />, text: "فروشگاه", link: "https://avanian.ir" },
+  { icon: <FaShop />, text: "فروشگاه", link: "https://oghatfaraghat.ir/" },
   { icon: <FaMessage />, text: "بات", link: "/chat" },
   { icon: <FaInfoCircle />, text: "درباره ما", link: "/about-us" },
   { icon: <FaUserTie />, text: "مشاوره والدین", link: "/parent-advisor" },
